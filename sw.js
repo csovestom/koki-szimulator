@@ -1,4 +1,4 @@
-const CACHE = 'koki-v2';
+const CACHE = 'koki-v3';
 const FILES = [
   './',
   'index.html',
@@ -6,8 +6,10 @@ const FILES = [
   'xlsx.full.min.js',
   'icons/icon-192.png',
   'icons/icon-512.png',
-  'icons/apple-touch-icon.png',
-  'icons/favicon-32.png'
+  'icons/maskable-192.png',
+  'icons/maskable-512.png',
+  'icons/icon.svg',
+  'icons/apple-touch-icon.png'
 ];
 
 self.addEventListener('install', e => {
