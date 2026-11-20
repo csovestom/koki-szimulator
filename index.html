@@ -249,20 +249,6 @@ button.on,button[aria-pressed=true]{background:var(--grain),#e3b14f;border-color
 .desk-tabs button{min-height:27px}
 .split{background:var(--grain),#1f281c}
 #log div{border-color:#3f4a38;border-left-width:3px;box-shadow:0 2px 6px #0006}
-#approach{position:absolute;z-index:4;left:50%;bottom:14px;transform:translateX(-50%);display:flex;flex-direction:column;gap:4px;width:min(440px,calc(100% - 24px));
-  padding:7px 8px 8px;background:var(--fibre),var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:var(--r);box-shadow:0 6px 18px #0009;animation:apIn .25s ease-out}
-@keyframes apIn{from{opacity:0;transform:translate(-50%,8px)}}
-#approach .ap-x{position:absolute;top:6px;right:6px;min-height:22px;width:24px;padding:0;border-radius:2px;border:1px solid #000;background:#33342c;color:#f1e6c4;font:700 15px/1 var(--sans);box-shadow:none;cursor:pointer}
-#approach .ap-x:hover{background:#4a4b40}
-#approach h3{padding-right:30px!important;margin:0 2px 1px;font:700 10px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--title-ink)}
-.ap-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;align-items:center;padding:5px 7px;border:1px solid color-mix(in srgb,var(--rule) 35%,transparent);border-radius:3px;cursor:pointer;background:#ffffff14}
-.ap-row:hover{background:var(--row-hover)}
-.ap-row b{font:700 13px var(--serif);color:var(--ink-strong)}
-.ap-row small{grid-column:1;color:var(--ink-soft);font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ap-v{grid-row:1/3;grid-column:2;text-align:right;font:700 20px/1 var(--mono);color:var(--ink-strong);font-variant-numeric:tabular-nums}
-.ap-v i{display:block;font:600 10px/1.3 var(--sans);font-style:normal;color:var(--ink-soft)}
-.ap-v.brake{color:var(--d2)}.ap-v.stop{color:var(--d3)}
-@media(max-width:720px){#approach{bottom:56px}}
 .gloss .swrow{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;margin:4px 0 6px;font-size:12px}
 .gloss .swsign{width:20px;height:28px;flex:none}
 .top-controls{gap:6px;padding:4px 6px;border-radius:5px;background:var(--grain),#11160f;border:1px solid #000;box-shadow:inset 0 2px 4px #000c,0 1px 0 #ffffff12}
@@ -417,9 +403,6 @@ button.on,button[aria-pressed=true]{background:var(--grain),#e3b14f;border-color
 #log div.err{color:var(--d3)}
 #tip{border-radius:0;padding:9px 12px;box-shadow:inset 0 0 0 3px var(--paper),inset 0 0 0 4px color-mix(in srgb,var(--rule) 45%,transparent),3px 4px 0 #0007}
 #tip b{font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase;font-size:11px}
-#approach{border-radius:0;padding:9px 10px 10px;box-shadow:inset 0 0 0 3px var(--paper),inset 0 0 0 4px color-mix(in srgb,var(--rule) 45%,transparent),3px 4px 0 #0008}
-#approach h3{font-family:var(--mono);padding:1px 2px 4px;border-bottom:3px double var(--rule);margin-bottom:3px}
-.ap-row{border-radius:0;background:var(--card)}
 .box{border-radius:0}
 .desk-tabs button{border-radius:2px 2px 0 0;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
 .desk-head{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
@@ -451,7 +434,7 @@ th{font-family:var(--mono)}
 #infoCard>button{margin:3px 9px 0;width:calc(100% - 18px)}
 #infoCard .ic-controls{margin:5px 9px 0;padding-top:5px}
 #infoCard{transition:left .32s cubic-bezier(.2,.85,.25,1),top .32s cubic-bezier(.2,.85,.25,1),translate .3s cubic-bezier(.2,.85,.25,1)}
-#srPanel,#approach{transition:translate .3s cubic-bezier(.2,.85,.25,1)}
+#srPanel{transition:translate .3s cubic-bezier(.2,.85,.25,1)}
 #infoCard.no-slide,#infoCard.dragging{transition:none}
 .ic-live{display:flex;gap:5px;align-items:stretch;margin:5px 9px 5px;padding:4px;background:#1b1f1a;border:1px solid #0b0d0a;box-shadow:inset 0 1px 3px #000a}
 .ic-front{width:44%;aspect-ratio:216/200;height:auto;flex:none;border-radius:2px;background:linear-gradient(#5d7f99,#a9c2cf 62%,#6f7a5f 63%,#4f5a43)}
@@ -614,7 +597,6 @@ body.paged #mapToolsToggle svg{width:20px;height:20px;fill:none;stroke:currentCo
 body.paged .map-tools:not(.open) .grp{display:none}
 body.paged .map-tools .grp{background:var(--grain),#121912e6}
 body.paged #log{top:6px;right:6px;width:min(280px,calc(100% - 56px))}
-body.paged #approach{bottom:50px}
 body.paged #sigWrap{top:46px;left:6px}
 @media(max-height:520px){body.paged #pager button{padding:2px 1px}body.paged #pager #clock{padding:4px 7px}}
 @media(max-width:560px){
@@ -790,7 +772,6 @@ html.theme-fade body,html.theme-fade body *:not(canvas){transition:background-co
         <button id="zoomOut" aria-label="Kicsinyítés">−</button><button id="zoomIn" aria-label="Nagyítás">+</button>
       </div>
     </div>
-    <div id="approach" hidden aria-live="polite"></div>
     <div id="infoCard" role="dialog" aria-label="Állapot" hidden></div>
     <section id="srPanel" role="dialog" aria-labelledby="srTitle" hidden>
       <header class="sr-head">
@@ -4110,7 +4091,9 @@ function mapClick(el, mods) {
   if (el.type === 'train') {
     $('#tip').style.display = 'none';
     lastTrainClick = { no: el.id, t: performance.now() };
-    focusTrain(TRAIN[el.id], true);
+    const t = TRAIN[el.id];
+    if (t.parked) { openInfo({ kind: 'train', id: t.no, w: trainCenter(t) || S2W(cam, el.x, el.y) }); return; }
+    focusTrain(t, true);
     return;
   }
   if (el.type === 'signal' || el.type === 'pre') openSigView(el.id);
@@ -5253,7 +5236,7 @@ function infoData() {
     return { title: trainName(tr), stateLabel: 'Vonattípus',
       state: freight ? freightLocoOf(tr).label : formation?.label || 'Tehervonat',
       mean: tr.type + (freight ? ` · <span title="${freight.breakdown}">${freight.label}</span>` : '') +
-        `<br><small class="ic-crew">Mozdonyvezető: ${driverName(tr)}${freight ? '' : ` · kb. ${passengerEstimate(tr)} utas`}</small>`, why: '',
+        `<br><small class="ic-crew">Mozdonyvezető: ${driverName(tr)}${tr.parked ? ` · leállítva a(z) ${ROMAN[tr.actualTrack]} vágányon` : freight ? '' : ` · kb. ${passengerEstimate(tr)} utas`}</small>`, why: '',
       live: tr.state === 'run',
       departure: canAsk || ready ? {
         station: tr.to ? LINES[tr.to].name : '', permission: tr.departurePermission, pending: departureCallPending(tr),
@@ -5311,7 +5294,7 @@ function renderInfo() {
   if (!infoSel) return;
   if (infoSel.kind === 'train') {
     const t = TRAIN[infoSel.id];
-    if (t.state !== 'run' && !(t.state === 'pending' && (canAskDeparture(t) || t.departurePermission === true))) { closeInfo(); return; }
+    if (t.state !== 'run' && !t.parked && !(t.state === 'pending' && (canAskDeparture(t) || t.departurePermission === true))) { closeInfo(); return; }
   }
   const d = infoData(), key = JSON.stringify([d, infoSel.dispatch]);
   if (key === infoKey) return;
@@ -5524,7 +5507,7 @@ function deoverlapPopups() {
   const placed = [];
   for (const el of [sw.classList.contains('open') ? sw : null, phonePanel, $('#soundPanel')]) if (vis(el)) placed.push(el.getBoundingClientRect());
   const host = $('#map').parentElement.getBoundingClientRect();
-  for (const el of [infoCard, srPanel, $('#approach')]) {
+  for (const el of [infoCard, srPanel]) {
     if (!vis(el)) { if (el) el.style.translate = ''; continue; }
     const cur = el._dxy || [0, 0], r0 = el.getBoundingClientRect();
     const r = { left: r0.left - cur[0], right: r0.right - cur[0], top: r0.top - cur[1], bottom: r0.bottom - cur[1] };
@@ -6267,16 +6250,14 @@ $('#speedCustom').addEventListener('change', e => {
   const v = clamp(parseFloat(String(e.target.value).replace(',', '.')) || 1, 0.1, 100);
   e.target.value = v; setSpeed(v);
 });
-const autoWin = { phone: false, phoneIdle: 0, phoneDismissed: false, sig: false, sigIdle: 0, sigDismissed: null, apKey: '', acc: 0 };
-const fmtDist = m => m >= 1000 ? (m / 1000).toFixed(1).replace('.', ',') + ' km' : Math.round(m / 10) * 10 + ' m';
+const autoWin = { phone: false, phoneIdle: 0, phoneDismissed: false, sig: false, sigIdle: 0, sigDismissed: null, acc: 0 };
 function approachingTrains() {
   return trains.filter(tr => tr.state === 'run' && tr.arrAt == null && !tr.exiting).sort((a, b) => a.nextSigDist - b.nextSigDist);
 }
 function autoWindowsOff() {
   if (autoWin.phone) { phonePanel.hidden = true; phoneTrigger.setAttribute('aria-expanded', 'false'); }
   if (autoWin.sig) closeSigView();
-  Object.assign(autoWin, { phone: false, sig: false, phoneDismissed: false, sigDismissed: null, apKey: '' });
-  $('#approach').hidden = true;
+  Object.assign(autoWin, { phone: false, sig: false, phoneDismissed: false, sigDismissed: null });
 }
 function autoWindows(real) {
   if (!autoMode) return;
@@ -6294,27 +6275,7 @@ function autoWindows(real) {
     if (autoWin.phone && !phonePanel.hidden) { phonePanel.hidden = true; phoneTrigger.setAttribute('aria-expanded', 'false'); }
     autoWin.phone = false;
   }
-  const list = approachingTrains(), ap = $('#approach');
-  if (!list.length) { ap.hidden = true; autoWin.apKey = ''; }
-  else {
-    const rows = list.slice(0, 3).map(tr => {
-      const kmh = Math.round(tr.v * 3.6), sig = tr.nextSig && tr.nextSigDist < 1e8 ? SIGS[tr.nextSig] : null;
-      const a = sig && ASP[tr.nextSig], from = tr.from ? LINES[tr.from].name : 'Kőbánya-Kispest';
-      const goal = tr.terminus ? `végállomás, a(z) ${ROMAN[tr.track]} vágányra érkezik` : tr.stops ? `megáll a(z) ${ROMAN[tr.track]} vágányon` : `áthalad a(z) ${ROMAN[tr.track]} vágányon`;
-      const trend = tr.v < 0.3 ? ['stop', 'áll'] : tr.by && tr.by.t !== 'train' && allowedSpeed(tr) < tr.v - 0.5 ? ['brake', 'fékez'] : ['', 'km/h'];
-      allowedSpeed(tr);
-      const where = sig ? `${sig.label} jelzőig ${fmtDist(tr.nextSigDist)} · ${a === 'VOROS' ? 'Megállj!' : a === 'HIVO' ? 'hívójelzés' : DIV40.has(a) ? '40 km/h' : 'szabad'}` : 'a nyílt vonalon';
-      return `<div class="ap-row" data-no="${tr.no}" title="Kattints: a kamera követi a vonatot"><b>${tr.cat} ${tr.no} · ${from} felől</b>`
-        + `<span class="ap-v ${trend[0]}">${kmh}<i>${trend[0] ? trend[1] : 'km/h'}</i></span><small>${where} · ${goal}</small></div>`;
-    }).join('');
-    const ids = list.slice(0, 3).map(t => t.no).join();
-    if (ids !== autoWin.apIds) { autoWin.apIds = ids; autoWin.apAt = performance.now(); }
-    if (ap.matches(':hover')) autoWin.apAt = performance.now();
-    const key = rows;
-    if (performance.now() - autoWin.apAt > 5000) { ap.hidden = true; autoWin.apKey = ''; }
-    else if (key !== autoWin.apKey) { ap.innerHTML = `<button type="button" class="ap-x" aria-label="Bezárás" title="Bezárás">×</button><h3>Közeledő vonat${list.length > 1 ? 'ok' : ''}</h3>` + rows; autoWin.apKey = key; }
-    if (performance.now() - autoWin.apAt <= 5000) ap.hidden = false;
-  }
+  const list = approachingTrains();
   const near = list.find(tr => tr.nextSig && tr.nextSigDist < 900);
   if (near) {
     autoWin.sigIdle = 0;
@@ -6326,11 +6287,6 @@ function autoWindows(real) {
     autoWin.sig = false; autoWin.sigDismissed = null;
   }
 }
-$('#approach').addEventListener('click', e => {
-  if (e.target.closest('.ap-x')) { e.currentTarget.hidden = true; autoWin.apKey = ''; autoWin.apAt = -1e9; return; }
-  const row = e.target.closest('.ap-row'); if (!row) return;
-  focusTrain(TRAIN[row.dataset.no]);
-});
 let camAuto = (() => { try { return localStorage.getItem('kobanya-kispest-camauto') !== '0'; } catch (err) { return true; } })();
 let camHoldUntil = 0, followZoom = null, camFollow = null;
 function camHold() { camHoldUntil = performance.now() + 20000; }
@@ -7182,7 +7138,7 @@ function winClose(el) {
         }
       } });
   }
-  for (const id of ['infoCard', 'phonePanel', 'srPanel', 'approach', 'soundPanel']) smooth(document.getElementById(id));
+  for (const id of ['infoCard', 'phonePanel', 'srPanel', 'soundPanel']) smooth(document.getElementById(id));
 })();
 </script>
 <script>
