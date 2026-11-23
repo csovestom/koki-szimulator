@@ -700,7 +700,7 @@ html.theme-fade body,html.theme-fade body *:not(canvas){transition:background-co
   <div class="top-identity">
   <div class="brand">
     <span class="route-mark logo-mark"><svg class="logo-svg" aria-hidden="true" viewBox="0 110 560 360" xmlns="http://www.w3.org/2000/svg"><defs><mask id="mvH"><rect x="0" y="0" width="560" height="600" fill="#fff"></rect><path d="M256.6 187.3A108 108 0 1 1 256.6 392.7L265.0 367.0A81 81 0 1 0 265.0 213.0Z" fill="#000"></path><path d="M0 262H290A26.5 26.5 0 0 1 290 315H0Z" fill="#000"></path></mask></defs><g mask="url(#mvH)" fill="currentColor"><circle cx="290" cy="290" r="165"></circle><path d="M12 208H540L516 262H38Z"></path><path d="M40 315H512L488 370H64Z"></path></g></svg></span>
-    <div><h1>Kőbánya-Kispest Forgalmi Szimulátor</h1><p>100a · 142 · Dominó 55</p></div>
+    <div><h1>Kőbánya-Kispest Forgalmi Szimulátor</h1><p>100a · 142 · Dominó 70</p></div>
   </div>
   <div class="timebox">
     <time id="clock" aria-label="Szimulációs idő"></time>
@@ -710,7 +710,7 @@ html.theme-fade body,html.theme-fade body *:not(canvas){transition:background-co
   <div class="grp top-controls">
     <button id="btnPult" aria-controls="pultWrap" aria-expanded="true">Pult</button>
     <button id="btnGuide" aria-controls="tt" aria-expanded="false" title="Teendők és magyarázatok (H)">Segítő</button>
-    <button id="btnTutor" aria-controls="tt" aria-expanded="false" title="Oktató: a Dominó 55 kezelése lépésről lépésre (O)">Oktató</button>
+    <button id="btnTutor" aria-controls="tt" aria-expanded="false" title="Oktató: a Dominó 70 kezelése lépésről lépésre (O)">Oktató</button>
     <button id="btnTT" aria-controls="tt" aria-expanded="true" title="Menetrend (M)">Menetrend</button>
     <button type="button" id="btnPhone" aria-controls="phonePanel" aria-expanded="false" aria-label="Telefon">
       <span>Telefon</span><span id="phoneIndicator" class="phone-trigger-dot" aria-hidden="true" hidden></span>
@@ -800,8 +800,8 @@ html.theme-fade body,html.theme-fade body *:not(canvas){transition:background-co
   <div class="split split-h" id="splitDesk" role="separator" aria-orientation="horizontal" aria-label="Terepasztal és pult közti elválasztó – húzd, dupla kattintás: alaphelyzet" tabindex="0" title="Húzd a méretezéshez · dupla kattintás: alaphelyzet"></div>
   <div id="bottom">
   <div id="pultWrap">
-    <div class="desk-head">Dominó 55 kezelőpult <span id="pultHint">Kezdőgomb → célgomb</span></div>
-    <canvas id="pultCanvas" aria-label="Dominó 55 kezelőpult"></canvas>
+    <div class="desk-head">Dominó 70 kezelőpult <span id="pultHint">Kezdőgomb → célgomb</span></div>
+    <canvas id="pultCanvas" aria-label="Dominó 70 kezelőpult"></canvas>
   </div>
   <div class="split split-v" id="splitPult" role="separator" aria-orientation="vertical" aria-label="Pult és oldalpanel közti elválasztó – húzd, dupla kattintás: alaphelyzet" tabindex="0" title="Húzd a méretezéshez · dupla kattintás: alaphelyzet"></div>
   <div id="tt" class="paper-dark">
@@ -825,7 +825,7 @@ html.theme-fade body,html.theme-fade body *:not(canvas){transition:background-co
       <details class="gloss">
         <summary>Fogalomtár – mi mit jelent?</summary>
         <dl>
-          <dt>Biztosítóberendezés</dt><dd>A váltókat, jelzőket és sorompókat összefüggésben kezelő berendezés. Nem enged egymást veszélyeztető vágányutakat, és a jelző csak akkor lehet szabad, ha minden feltétel teljesül. A Dominó 55 ennek egy jelfogós, dominó elemekből épített pultú típusa.</dd>
+          <dt>Biztosítóberendezés</dt><dd>A váltókat, jelzőket és sorompókat összefüggésben kezelő berendezés. Nem enged egymást veszélyeztető vágányutakat, és a jelző csak akkor lehet szabad, ha minden feltétel teljesül. A Dominó 70 ennek egy jelfogós, dominó elemekből épített pultú típusa, központi villamos váltóállítással.</dd>
           <dt>Vágányút</dt><dd>Az az útvonal, amelyen a vonat a jelzőtől a célig halad: a váltók megfelelő állásával és a szakaszok lezárásával. A pulton fehér, a térképen zöld csík mutatja.</dd>
           <dt>Első és második lezárás</dt><dd>Első: a vágányút beállítása (kezdőgomb + célgomb), a váltók lezáródnak. Második: jelzőállítás (Jelzőáll. + jelzőgomb), ekkor válik a jelző szabadra.</dd>
           <dt>Váltójelző</dt><dd><span class="swrow"><svg class="swsign" viewBox="0 0 20 28" aria-hidden="true"><rect x="2" y="1" width="16" height="8" fill="#f4f0e2" stroke="#111"></rect><text x="10" y="7.4" font-size="6.5" font-weight="700" text-anchor="middle" fill="#111">2</text><rect x="2" y="9" width="16" height="16" fill="#121212"></rect><rect x="8" y="12" width="4" height="10" fill="#fff"></rect></svg> egyenes irány &nbsp; <svg class="swsign" viewBox="0 0 20 28" aria-hidden="true"><rect x="2" y="1" width="16" height="8" fill="#f4f0e2" stroke="#111"></rect><text x="10" y="7.4" font-size="6.5" font-weight="700" text-anchor="middle" fill="#111">2</text><rect x="2" y="9" width="16" height="16" fill="#121212"></rect><path d="M6 11.5 L15 17 L6 22.5 L6 19.6 L10.5 17 L6 14.4Z" fill="#fff"></path></svg> kitérő, a csúcs felől nézve (a nyíl a kitérés felé mutat) &nbsp; <svg class="swsign" viewBox="0 0 20 28" aria-hidden="true"><rect x="2" y="1" width="16" height="8" fill="#f4f0e2" stroke="#111"></rect><text x="10" y="7.4" font-size="6.5" font-weight="700" text-anchor="middle" fill="#111">2</text><rect x="2" y="9" width="16" height="16" fill="#121212"></rect><rect x="5" y="15" width="10" height="4" fill="#fff"></rect></svg> kitérő, a gyök felől nézve</span>A váltó mindig a simuló csúcssín felé terel. A terepasztalon minden váltó mellett ott a váltójelzője, fölötte a váltó száma; a zöld keret azt jelzi, hogy a váltó vágányúttal le van zárva. (Gyermekvasutas tankönyv, F1-34–35)</dd>
@@ -835,7 +835,7 @@ html.theme-fade body,html.theme-fade body *:not(canvas){transition:background-co
           <dt>Bejárati / kijárati jelző</dt><dd>A, B, C, D (nyugat) és M, L, H (kelet) a bejárati jelzők, E és F a Kőbánya-Teher felőli közbenső jelzők. K1–K11 nyugat felé, V1–V11 kelet felé engedi ki a vonatot.</dd>
           <dt>Előjelző</dt><dd>A bejárati jelző előtt áll, előre jelzi annak állását, hogy a vonat időben fékezhessen.</dd>
           <dt>Térköz, térközjelző</dt><dd>A nyílt vonal szakaszai. A térközjelző (141/142, 161/162) önműködően véd az előtte haladó vonattól.</dd>
-          <dt>Menetirány (térköz iránya)</dt><dd>Egy vonali vágányon egyszerre csak egy irányba közlekedhet vonat. A kijárati vágányút fordítja meg, a pulton nyíl mutatja. A kispesti vonal egyvágányú.</dd>
+          <dt>Menetirány (térköz iránya)</dt><dd>Egy vonali vágányon egyszerre csak egy irányba közlekedhet vonat. A kijárati vágányút fordítja meg, a pulton nyíl mutatja. A kispesti vonal egyvágányú: oda csak az ellenvonat beérkezése után indíthatsz vonatot. A kétvágányú vonalakon az indulás nem függ a szembejövő vonattól.</dd>
           <dt>Keresztezés</dt><dd>Két szembe haladó vonat találkozása az állomáson: az egyik bejár és megvárja, amíg a másik is beér, csak utána indulhat tovább.</dd>
           <dt>Megelőzés</dt><dd>A lassabb vonat mellékvágányra áll, a gyorsabb az átmenő fővágányon elhalad mellette.</dd>
           <dt>Hívójelzés</dt><dd>Villogó fehér fény a vörös alatt: a vonat legfeljebb 15 km/h-val, a berendezés ellenőrzése nélkül haladhat. Csak hiba vagy foglalt vágány esetén!</dd>
@@ -895,14 +895,14 @@ html.theme-fade body,html.theme-fade body *:not(canvas){transition:background-co
     <div class="help-brand"><svg class="logo-svg" aria-hidden="true" viewBox="0 110 560 360" xmlns="http://www.w3.org/2000/svg"><defs><mask id="mvB"><rect x="0" y="0" width="560" height="600" fill="#fff"></rect><path d="M256.6 187.3A108 108 0 1 1 256.6 392.7L265.0 367.0A81 81 0 1 0 265.0 213.0Z" fill="#000"></path><path d="M0 262H290A26.5 26.5 0 0 1 290 315H0Z" fill="#000"></path></mask></defs><g mask="url(#mvB)" fill="currentColor"><circle cx="290" cy="290" r="165"></circle><path d="M12 208H540L516 262H38Z"></path><path d="M40 315H512L488 370H64Z"></path></g></svg><h2 id="helpTitle">Kőbánya-Kispest Forgalmi Szimulátor<small>kezelési útmutató</small></h2></div>
     <p class="lead">Kőbánya-Kispest forgalmi szolgálattevője vagy a 100a és a 142-es vonal csomópontjában. <span id="shiftIntro"></span></p>
     <ul class="howto">
-      <li><b>Oktató</b> lépésenként megtanítja a Dominó 55 pult kezelését.</li>
+      <li><b>Oktató</b> lépésenként megtanítja a Dominó 70 pult kezelését.</li>
       <li><b>Segítő</b> mindig mutatja a következő teendőt és az okát.</li>
       <li><b>Automata</b> a játék kezel, te figyelsz.</li>
       <li><b>Idő</b> 1× sebességgel indul. Az Állj gomb szünetelteti, a csúszka tekeri.</li>
     </ul>
     <table class="help-keys">
       <tbody><tr><th>Vágányút</th><td>kezdőgomb + célgomb</td></tr>
-      <tr><th>Jelző szabadra</th><td>Jelzőáll. + a jelző gombja</td></tr>
+      <tr><th>Jelző szabadra</th><td>a jelző gombja + Jelzőáll. (vagy fordítva)</td></tr>
       <tr><th>Feloldás</th><td>Törlés + a kezdőjelző gombja</td></tr>
       <tr><th>Váltó</th><td>Közös áll. + a váltó gombja</td></tr>
       <tr><th>Kőbánya-Teher felől</th><td>D/C → F/E közbenső jelző, onnan tovább a vágányra</td></tr>
@@ -1099,7 +1099,7 @@ const LINES = {
   FVj: { st: 'FV', name: 'Budapest-Ferencváros', track: 'jobb vágány', side: 'W', edge: 'lFVj', end: 'FVjE', entry: 'A', secs: ['L_FVj'], dir: 0 },
   PSb: { st: 'PS', name: 'Pestszentlőrinc', track: 'bal vágány', side: 'E', edge: 'lPSb', end: 'PSbE', entry: 'M', secs: ['L_PSb'], dir: 0 },
   PSj: { st: 'PS', name: 'Pestszentlőrinc', track: 'jobb vágány', side: 'E', edge: 'lPSj', end: 'PSjE', entry: 'L', secs: ['L_PSj'], dir: 0 },
-  KP: { st: 'KP', name: 'Kispest', track: 'egyvágányú vonal', side: 'E', edge: 'lKP', end: 'KPE', entry: 'H', secs: ['L_KP'], dir: 0 },
+  KP: { st: 'KP', name: 'Kispest', track: 'egyvágányú vonal', side: 'E', edge: 'lKP', end: 'KPE', entry: 'H', secs: ['L_KP'], dir: 0, single: true },
 };
 for (const k in LINES) LINES[k].id = k;
 const LINE_ENDS = new Set(Object.values(LINES).map(L => L.end));
@@ -1849,7 +1849,7 @@ function authorizeReception(tr) {
   if (receptionProblem(tr)) return false;
   tr.receiveAt = now;
   LINES[originLine(tr)].dir = tr.dir;
-  if (!autoMode) for (const t of trains) {
+  if (!autoMode && LINES[originLine(tr)].single) for (const t of trains) {
     if (t === tr || t.departurePermission !== true || destinationLine(t) !== originLine(tr) || t.lineDepartAt != null || t.state === 'done') continue;
     const prev = t.permAfter && TRAIN[t.permAfter];
     if (!prev || prev.actualTrack != null || prev.state === 'done') t.permAfter = tr.no;
@@ -1882,6 +1882,7 @@ function canAskDeparture(tr) {
 }
 const ASK_AHEAD = 1800;
 function opposingBefore(train, line) {
+  if (!LINES[line].single) return null;
   const coming = t => t !== train && t.state !== 'done' && originLine(t) === line && t.actualTrack == null;
   const onLine = trains.find(t => coming(t) && (t.state === 'run' || (t.state === 'pending' && t.receiveAt != null)));
   if (onLine) return onLine;
@@ -1891,6 +1892,7 @@ function opposingBefore(train, line) {
   return next && coming(next) && next.enter <= Math.max(now, train.dep) ? next : null;
 }
 function heldPermission(line, except) {
+  if (!LINES[line].single) return null;
   return trains.find(t => t.departurePermission === true && destinationLine(t) === line && t.lineDepartAt == null &&
     t.state === 'run' && t.actualTrack != null && t.state !== 'done' &&
     (!except || (t.permAfter !== except.no && t.crossing !== except.no))) || null;
@@ -3777,7 +3779,7 @@ function drawPult(c, cm) {
   for (const h of hits) if (guideHL.pult.has(h.type + ':' + h.id)) drawGuideRing(c, h.x, h.y, h.rx);
   drawPultHands(c, hits, z);
   hitCache.set(c.canvas, hits);
-  $('#pultHint').textContent = armed ? ARM_TEXT[armed] + ' …' : pStart ? `Kezdőgomb: ${pStart} – nyomd meg a célgombot` : 'Kezdőgomb → célgomb';
+  $('#pultHint').textContent = armed ? ARM_TEXT[armed] + ' …' : pStart ? (activeFrom[pStart] && !activeFrom[pStart].sigReq ? `${pStart} – nyomd meg a Jelzőáll. gombot` : `Kezdőgomb: ${pStart} – nyomd meg a célgombot`) : 'Kezdőgomb → célgomb';
 }
 function pultToWorld(px, py) {
   return [X(clamp(px, 40, 2085)), RY(clamp(py, 300, 820))];
@@ -3796,8 +3798,9 @@ function pultClick(el, at) {
   }
   if (el.type === 'pSig') openSigView(el.id);
   if (el.type === 'pCommon') {
-    pStart = null;
     if (el.id === 'VV') { showStems = !showStems; return; }
+    const ps = pStart; pStart = null;
+    if (ps && performance.now() - pStartAt < 10000 && ['JA', 'TO', 'KO', 'JM'].includes(el.id)) { armed = null; return ({ JA: jelzoAllit, TO: torles, KO: kenyszerOldas, JM: jelzoM })[el.id](ps); }
     armed = armed === el.id ? null : el.id; armedAt = performance.now(); return;
   }
   const a = armed; armed = null;
@@ -4047,7 +4050,7 @@ function drawSwView(litPhase) {
   signalTextLines(c, status, 108, ty, 88, 17);
   c.fillStyle = '#111c1d'; c.fillRect(0, 340, W, 40);
   c.fillStyle = '#9eb2a5'; c.font = '10px ui-monospace, monospace';
-  c.fillText(local ? 'Váltójelző · helyszíni kezelés' : 'Váltójelző · Dominó 55', 14, 364);
+  c.fillText(local ? 'Váltójelző · helyszíni kezelés' : 'Váltójelző · Dominó 70', 14, 364);
 }
 function distSeg(px, py, a, b) {
   const dx = b[0] - a[0], dy = b[1] - a[1], l = dx * dx + dy * dy || 1;
@@ -4537,7 +4540,8 @@ function departureWords(train, station, time) {
   return `A ${train.no} sz. vonat ${station} állomásról ${phoneClock(time)} indult.`;
 }
 function permissionWords(train, station, operator) {
-  return `Vonatot nem indítok. A ${train.no} sz. vonat ${station} állomásra jöhet! ${operator}.`;
+  const line = station === 'Kőbánya-Kispest' ? originLine(train) : destinationLine(train);
+  return `${LINES[line]?.single ? 'Vonatot nem indítok. ' : ''}A ${train.no} sz. vonat ${station} állomásra jöhet! ${operator}.`;
 }
 function startDepartureCall(train) {
   const line = destinationLine(train), connection = phoneLines[line];
@@ -5782,7 +5786,7 @@ function renderTutor(force) {
   if (!force && key === tutor.key) return;
   tutor.key = key;
   if (!tutor.on) {
-    body.innerHTML = `<div class="tu-intro"><h3>Dominó 55 oktató</h3><p>Nyolc rövid lecke az alapoktól: melyik gombot mikor és miért nyomod meg. A tanpályán nincs forgalom, nyugodtan gyakorolhatsz. Kilépéskor a szolgálat ott folytatódik, ahol abbahagytad.</p></div>
+    body.innerHTML = `<div class="tu-intro"><h3>Dominó 70 oktató</h3><p>Nyolc rövid lecke az alapoktól: melyik gombot mikor és miért nyomod meg. A tanpályán nincs forgalom, nyugodtan gyakorolhatsz. Kilépéskor a szolgálat ott folytatódik, ahol abbahagytad.</p></div>
       <ol class="tu-lessons">${LESSONS.map((l, i) => `<li><button type="button" data-lesson="${i}"><span class="tu-no">${i + 1}</span><span class="tu-t"><b>${l.title}</b><small>${l.sub}</small></span>${tutor.done.has(i) ? '<i class="tu-stamp">Kész</i>' : ''}</button></li>`).join('')}</ol>`;
     return;
   }
@@ -5882,7 +5886,7 @@ const COMMON_HELP = {
   JM: 'Jelző Megállj!. + jelző gombja: a szabad jelzőt Megállj!-ra állítja, a vágányút lezárva marad (kényszeroldással oldható). Élő hívójelzést is megszüntet.',
   KA: 'Közös állítás. + váltó gombja: egyedi váltóállítás. A kulcsos váltókat (A/3, A/5, A/7, 2, 38/1) a terepasztalon, kulccsal kell kezelni.',
   TO: 'Törlés. + kezdőgomb: a lezárt vágányút törlése, de csak jelzőállítás előtt (első lezárás). Jelzőállítás után csak kényszeroldással törölhető.',
-  JA: 'Jelzőállítás (második lezárás). + jelző gombja: a lezárt vágányút jelzője szabadra vált.',
+  JA: 'Jelzőállítás (második lezárás). A lezárt vágányút jelzőjének gombja, majd a Jelzőáll. gomb (vagy fordított sorrendben): a jelző szabadra vált.',
   VV: 'Váltó visszajelentés: a váltók állását mutató szárcsíkok be- és kikapcsolása. Sárga = szabad váltó, vörös = jármű van rajta, villog = állítás alatt.',
 };
 function pultTipHtml(el) {
