@@ -1,4 +1,4 @@
-const CACHE = 'koki-v6';
+const CACHE = 'koki-v7';
 const FILES = [
   './',
   'index.html',
