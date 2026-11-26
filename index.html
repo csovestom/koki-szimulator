@@ -1136,6 +1136,20 @@ for (const L of Object.values(LINES)) {
 }
 const ROMAN = { '1': 'I.', '2': 'II.', '4': 'IV.', '5': 'V.', '6': 'VI.', '8': 'VIII.', '9': 'IX.', '10': 'X.', '11': 'XI.' };
 const TRACKS = Object.keys(ROMAN);
+const ENDB = {};
+{
+  const deg = {};
+  for (const e of EDGES) { deg[e.a] = (deg[e.a] || 0) + 1; deg[e.b] = (deg[e.b] || 0) + 1; }
+  const ends = Object.keys(deg).filter(n => deg[n] === 1 && !LINE_ENDS.has(n) && !SIGAT[n + '|1'] && !SIGAT[n + '|-1'])
+    .sort((a, b) => P[a][1] - P[b][1] || P[a][0] - P[b][0]);
+  ends.forEach((node, i) => {
+    const e = EDGES.find(x => x.a === node || x.b === node);
+    let id = 'T' + (i + 1);
+    while (SIGS[id]) id = 'T' + id;
+    ENDB[id] = { id, node, dir: e.b === node ? 1 : -1, edge: e.id, name: SEC_NAMES[e.sec] || 'csonka vágány' };
+  });
+}
+const ENDAT = Object.fromEntries(Object.values(ENDB).map(b => [b.node, b.id]));
 function buildRoutes() {
   const best = new Map();
   for (const sid in SIGS) {
@@ -1153,6 +1167,7 @@ function buildRoutes() {
           if (line && SIGS[node].dir === -dir) { record({ end: 'L:' + line, line, path: [...path, LINES[line].edge], sw }); return; }
         }
       }
+      if (node !== s.node && ENDAT[node]) { if (s.kind === 'exit' && !s.inter) record({ end: ENDAT[node], path, sw, shunt: true }); return; }
       const w = SWAT[node];
       let cands = OUT[node + '|' + dir] || [];
       if (w && arrived) {
@@ -1194,6 +1209,11 @@ function buildRoutes() {
     for (const e of r.path) { const ew = SWAT[dirNode(e, s.dir)]; if (ew && !(ew.id in r.sw) && e !== ew.trunk) r.sw[ew.id] = e === ew.N ? 'N' : 'R'; }
     const secs = [];
     for (const e of r.path) if (!secs.includes(EDGE[e].sec)) secs.push(EDGE[e].sec);
+    if (r.shunt) {
+      out.push({ id: `${r.start}-${r.end}`, start: r.start, end: r.end, secs, sw: r.sw, div: r.div > 0, edges: new Set(r.path), path: r.path,
+        shunt: true, dest: [r.end], name: `${r.start} → ${r.end} tolatóvágányút (${ENDB[r.end].name})` });
+      continue;
+    }
     const endSig = exit ? null : SIGS[r.end];
     const track = endSig && endSig.track;
     const def = {
@@ -1274,7 +1294,7 @@ function computeAspects() {
     const s = SIGS[id];
     const hivo = s.hivoUntil > now ? 'HIVO' : 'VOROS';
     const r = activeFrom[id];
-    if (!r || !r.sigReq || r.forceAt || !switchesReady(r)) return hivo;
+    if (!r || r.def.shunt || !r.sigReq || r.forceAt || !switchesReady(r)) return hivo;
     if (r.def.secs.some(x => SEC[x].occ)) return hivo;
     if (r.def.line && LINES[r.def.line].dir !== r.def.ldir) return hivo;
     if (exitWaitsForPermission(r)) return hivo;
@@ -1339,7 +1359,7 @@ function setRoute(def, withSignal = false) {
   for (const s of def.secs) SEC[s].lock = def.id;
   if (def.line) LINES[def.line].dir = def.ldir;
   active.push(r); activeFrom[def.start] = r;
-  showHands('pSig:' + def.start, def.line ? 'pTarget:c' + def.line : 'pSig:' + def.end);
+  showHands('pSig:' + def.start, def.line ? 'pTarget:c' + def.line : def.shunt ? 'pEnd:' + def.end : 'pSig:' + def.end);
   msg(`Vágányút lezárva: ${def.name}.` + (withSignal ? '' : ' Jelzőállítás szükséges.'), 'ok');
   computeAspects();
   return true;
@@ -1350,6 +1370,7 @@ function jelzoAllit(id) {
   if (!r) { msg(`Jelzőállítás: a(z) ${id} jelzőről nincs lezárt vágányút.`, 'err'); return; }
   if (r.train) { msg(`Jelzőállítás: a vágányút már felhasználva.`, 'err'); return; }
   if (r.forceAt) { msg(`Jelzőállítás: kényszeroldás folyamatban.`, 'err'); return; }
+  if (r.def.shunt) { msg(`Jelzőállítás: a(z) ${id} jelzőről tolatóvágányút van lezárva, a jelző magától áll szabadra a tolatásra.`, 'info'); return; }
   r.sigReq = true; r.second = true;
   const waiting = exitWaitsForPermission(r);
   msg(`Jelzőállítás: ${id}.` + (waiting ? ` A jelző a(z) ${waiting.no} sz. vonat indulási engedélye után vált szabadra.` : ''), 'ok');
@@ -3740,8 +3761,8 @@ function drawPult(c, cm) {
     c.strokeStyle = '#0d0b08'; c.lineWidth = 2.5 * z; c.beginPath(); c.moveTo(lx - s.dir * 12 * z, ly - 5 * z); c.lineTo(lx - s.dir * 12 * z, ly + 5 * z); c.moveTo(lx - s.dir * 12 * z, ly); c.lineTo(lx, ly); c.stroke();
     c.fillStyle = '#0d0b08'; c.beginPath(); c.arc(lx, ly, 6.5 * z, 0, 7); c.fill();
     const r = activeFrom[id];
-    lampDot(c, lx, ly, 4.6 * z, a === 'VOROS' ? '#ff2a1a' : a === 'HIVO' ? (blink % 0.8 < 0.4 ? '#f4f0df' : '#ff2a1a') : '#3dff7a');
-    const foot = pStart === id ? (blink % 0.6 < 0.4 ? '#ffd23a' : null) : r && !r.second && !r.train ? (!switchesReady(r) && blink % 0.5 < 0.25 ? null : '#ffd23a') : null;
+    lampDot(c, lx, ly, 4.6 * z, r && r.def.shunt && r.sigReq && !r.forceAt && switchesReady(r) ? '#f4f0df' : a === 'VOROS' ? '#ff2a1a' : a === 'HIVO' ? (blink % 0.8 < 0.4 ? '#f4f0df' : '#ff2a1a') : '#3dff7a');
+    const foot = pStart === id ? (blink % 0.6 < 0.4 ? '#ffd23a' : null) : r && !r.second && !r.train && !r.def.shunt ? (!switchesReady(r) && blink % 0.5 < 0.25 ? null : '#ffd23a') : null;
     if (foot) lampDot(c, lx - s.dir * 12 * z, ly + side * 9 * z, 2.6 * z, foot);
     if (r && r.forceAt > now) { lampDot(c, lx + s.dir * 2 * z, ly - side * 11 * z, 2.6 * z, '#f4f0df'); pText(c, 'KO', lx + s.dir * 2 * z, ly - side * 19 * z, fs(9), '#f4f0df'); }
     pButton(c, x, y, 8 * z, '#c8402e', '#3dbf5a', pStart === id, false);
@@ -3751,6 +3772,13 @@ function drawPult(c, cm) {
   for (const id in PRE) {
     const p = PRE[id], a = ASP[p.main], [px, py] = lineAt(LINES[SIGS[p.main].line], 0.68); const [x, y] = W2S(cm, px, py - 17);
     lampDot(c, x, y, 4 * z, (a === 'VOROS' || a === 'HIVO') ? '#ffd600' : '#3dff7a'); pText(c, id, x, y - 11 * z, fs(11));
+  }
+  for (const b of Object.values(ENDB)) {
+    const [x, y] = W2S(cm, ...P[b.node]);
+    const r = active.find(q => q.def.shunt && q.def.end === b.id);
+    pButton(c, x, y, 7.5 * z, '#d9d4c3', b.dir > 0 ? '#3b7fd9' : '#a19e93', !!r, false);
+    pText(c, b.id, x + b.dir * 14 * z, y, fs(12), null, b.dir > 0 ? 'left' : 'right');
+    hits.push({ type: 'pEnd', id: b.id, x, y, rx: 12 * z, ry: 12 * z });
   }
   for (const [id, xy] of Object.entries(TARGETS)) {
     const [x, y] = W2S(cm, ...xy);
@@ -3835,6 +3863,14 @@ function pultClick(el, at) {
     }
     if (pStart === el.id) { pStart = null; return; }
     pStart = el.id; pStartAt = performance.now(); return;
+  }
+  if (el.type === 'pEnd') {
+    const st = ROUTES.filter(r => r.shunt && r.end === el.id).map(r => r.start);
+    if (!pStart) return msg(st.length ? `A(z) ${el.id} végponti gomb tolatási célgomb: előbb a kezdő jelző (${st.join(', ')}) gombját nyomd meg.` : `A(z) ${el.id} végponti gombra nem vezet tolatóvágányút.`, 'info');
+    const def = ROUTES.find(r => r.start === pStart && r.end === el.id);
+    const s = pStart; pStart = null;
+    if (def) return setRoute(def, true);
+    return msg(`A(z) ${s} jelzőtől nem vezet tolatóvágányút a(z) ${el.id} végponti gombra.`, 'err');
   }
   if (el.type === 'pTarget') {
     if (!pStart) return msg('Előbb a kijárati jelző kezdőgombját nyomd meg.', 'info');
@@ -5913,6 +5949,10 @@ function pultTipHtml(el) {
     return `<b>${s.label} jelző gombja</b><br>${ASP_NAME[ASP[el.id]]}<br>${role}` + (r ? `<br>Lezárva: ${r.def.name}${r.sigReq || r.train ? '' : ' – jelzőállítás kell'}` : '');
   }
   if (el.type === 'pTarget') { const L = LINES[el.id.slice(1)]; return `<b>Vágányúti célgomb – ${lineLabel(L.id)} felé</b><br>Kijárathoz: előbb a kijárati jelző (${L.side === 'E' ? 'V' : 'K'}) gombja, aztán ez.`; }
+  if (el.type === 'pEnd') {
+    const b = ENDB[el.id], st = ROUTES.filter(r => r.shunt && r.end === el.id).map(r => r.start), r = active.find(q => q.def.shunt && q.def.end === el.id);
+    return `<b>${el.id} végponti gomb</b><br>${b.name[0].toUpperCase() + b.name.slice(1)}: a vágány itt véget ér.<br>` + (st.length ? `Tolatási célgomb: előbb a(z) ${st.join(', ')} jelző gombja, aztán ez. A jelző fehér fénnyel jelzi, hogy szabad a tolatás. Feloldás: Törlés + a kezdő jelző gombja.` : 'Ide jelzőtől nem vezet tolatóvágányút.') + (r ? `<br>Lezárva: ${r.def.name}` : '');
+  }
   if (el.type === 'pLine') { const L = LINES[el.id], occ = L.secs.some(id => SEC[id].occ); return `<b>${lineLabel(L.id)}</b><br>Menetirány: ${L.dir ? (L.dir > 0 ? 'kelet felé ►' : '◄ nyugat felé') : 'nincs beállítva'}<br>${occ ? 'Foglalt állomásköz' : 'Szabad állomásköz'}`; }
   if (el.type === 'pSw') {
     const w = SW[el.id], s = SEC[w.sec];
@@ -5962,6 +6002,7 @@ function setAuto(on) {
 $('#btnAuto').onclick = () => setAuto(!autoMode);
 $('#btnAuto2').onclick = () => setAuto(!autoMode);
 function autoTick() {
+  for (const r of active.filter(x => x.def.shunt && !x.train)) cancelRoute(r, true);
   for (const line of Object.keys(LINES)) authorizeReception(nextReception(line));
   for (const it of guideItems()) if (it.act && it.plan && it.plan.kind !== 'phone' && !(it.plan.kind === 'route' && routeProblem(it.plan.def))) it.act.run();
 }
