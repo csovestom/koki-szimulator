@@ -2326,7 +2326,7 @@ const canvas = $('#map'), ctx = canvas.getContext('2d');
 const pc = $('#pultCanvas'), pctx = pc.getContext('2d');
 const cam = { x: 3700, y: 50, z: 1, w: 800, h: 600 };
 const BG = { complete: false, naturalWidth: 0 };
-const pcam = { x: 1075, y: 620, z: 0.5, w: 1000, h: 400 };
+const pcam = { x: 1062, y: 600, z: 0.5, w: 1000, h: 400 };
 let selStart = null, hover = null, follow = null, blink = 0;
 const W2S = (c, x, y) => [(x - c.x) * c.z + c.w / 2, (y - c.y) * c.z + c.h / 2];
 const S2W = (c, sx, sy) => [(sx - c.w / 2) / c.z + c.x, (sy - c.h / 2) / c.z + c.y];
@@ -6514,7 +6514,7 @@ function resize() {
   if (pOpen) {
     const w = pw.getBoundingClientRect().width;
     const h = Math.max(0, (isPaged() ? pw : bottom).getBoundingClientRect().height - pw.querySelector('.desk-head').offsetHeight);
-    pcam.w = w; pcam.h = h; pcam.z = Math.min(w / 2150, h / 720);
+    pcam.w = w; pcam.h = h; pcam.z = Math.min(w / 2100, h / 790);
     if (isPaged()) pcam.z = Math.max(pcam.z, Math.min(0.5, h / 740));
     pc.style.height = h + 'px'; pc.width = Math.round(w * dpr); pc.height = Math.round(h * dpr);
     pctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -6607,12 +6607,12 @@ function frame(t) {
   if (!$('#pultWrap').classList.contains('closed')) {
     if (tutor.on && isPaged() && guideHL.pult.size === 1) {
       const [type, id] = [...guideHL.pult][0].split(':');
-      const p = type === 'pCommon' ? [COMMON[id].x, COMMON[id].y] : type === 'pSw' ? SWBTN[id] : type === 'pTarget' ? TARGETS[id] : type === 'pSig' ? P[SIGS[id].node] : [1075, 620];
+      const p = type === 'pCommon' ? [COMMON[id].x, COMMON[id].y] : type === 'pSw' ? SWBTN[id] : type === 'pTarget' ? TARGETS[id] : type === 'pSig' ? P[SIGS[id].node] : [1062, 600];
       const [sx] = W2S(pcam, ...p);
       if (sx < 36 || sx > pcam.w - 36) pcam.x += (p[0] - pcam.x) * 0.12;
     }
-    const mx = Math.max(0, 1075 - pcam.w / 2 / pcam.z), my = Math.max(0, 370 - pcam.h / 2 / pcam.z);
-    pcam.x = clamp(pcam.x, 1075 - mx, 1075 + mx); pcam.y = clamp(pcam.y, 620 - my, 620 + my);
+    const mx = Math.max(0, 1050 - pcam.w / 2 / pcam.z), my = Math.max(0, 395 - pcam.h / 2 / pcam.z);
+    pcam.x = clamp(pcam.x, 1062 - mx, 1062 + mx); pcam.y = clamp(pcam.y, 600 - my, 600 + my);
     drawPult(pctx, pcam); pultGlow = 1;
   }
   drawSigView();
