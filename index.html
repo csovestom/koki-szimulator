@@ -749,7 +749,7 @@ body.bz-course .tu-head span{letter-spacing:.06em}
 <body data-page="">
 <header id="top">
   <button type="button" id="btnMenu" aria-haspopup="dialog" aria-controls="bzMenu" aria-expanded="false" title="Főmenü: a szimuláció megáll (Esc)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M4 12h16M4 17.5h16"></path></svg><span>Főmenü</span></button>
-  <div class="top-identity">
+    <div class="top-identity">
   <div class="brand">
     <span class="route-mark logo-mark"><svg class="logo-svg" aria-hidden="true" viewBox="0 110 560 360" xmlns="http://www.w3.org/2000/svg"><defs><mask id="mvH"><rect x="0" y="0" width="560" height="600" fill="#fff"></rect><path d="M256.6 187.3A108 108 0 1 1 256.6 392.7L265.0 367.0A81 81 0 1 0 265.0 213.0Z" fill="#000"></path><path d="M0 262H290A26.5 26.5 0 0 1 290 315H0Z" fill="#000"></path></mask></defs><g mask="url(#mvH)" fill="currentColor"><circle cx="290" cy="290" r="165"></circle><path d="M12 208H540L516 262H38Z"></path><path d="M40 315H512L488 370H64Z"></path></g></svg></span>
     <div><h1>Kőbánya-Kispest Forgalmi Szimulátor</h1><p>100a · 142 · Dominó 70</p></div>
@@ -880,11 +880,11 @@ body.bz-course .tu-head span{letter-spacing:.06em}
         <dl>
           <dt>Biztosítóberendezés</dt><dd>A váltókat, jelzőket és sorompókat összefüggésben kezelő berendezés. Nem enged egymást veszélyeztető vágányutakat, és a jelző csak akkor lehet szabad, ha minden feltétel teljesül. A Dominó 70 ennek egy jelfogós, dominó elemekből épített pultú típusa, központi villamos váltóállítással.</dd>
           <dt>Vágányút</dt><dd>Az az útvonal, amelyen a vonat a jelzőtől a célig halad: a váltók megfelelő állásával és a szakaszok lezárásával. A pulton fehér, a térképen zöld csík mutatja.</dd>
-          <dt>Első és második lezárás</dt><dd>Első: a vágányút beállítása (kezdőgomb + célgomb), a váltók lezáródnak. Második: jelzőállítás (Jelzőáll. + jelzőgomb), ekkor válik a jelző szabadra.</dd>
+          <dt>Vágányút-beállítás</dt><dd>A Dominó 70-en egyetlen kezelés: kezdőgomb + célgomb. A berendezés átállítja és lezárja a váltókat, megkeresi az oldalvédelmet, és ha minden feltétel teljesül, a jelző magától szabadra vált. Ha valami akadályozza (foglalt szakasz, másik vágányút), a vágányút tárolódik: a gombok villognak, és a vágányút az akadály megszűnésekor magától beáll. Összetett utat a vonat haladási sorrendjében kell állítani.</dd>
           <dt>Váltójelző</dt><dd><span class="swrow"><svg class="swsign" viewBox="0 0 20 28" aria-hidden="true"><rect x="2" y="1" width="16" height="8" fill="#f4f0e2" stroke="#111"></rect><text x="10" y="7.4" font-size="6.5" font-weight="700" text-anchor="middle" fill="#111">2</text><rect x="2" y="9" width="16" height="16" fill="#121212"></rect><rect x="8" y="12" width="4" height="10" fill="#fff"></rect></svg> egyenes irány &nbsp; <svg class="swsign" viewBox="0 0 20 28" aria-hidden="true"><rect x="2" y="1" width="16" height="8" fill="#f4f0e2" stroke="#111"></rect><text x="10" y="7.4" font-size="6.5" font-weight="700" text-anchor="middle" fill="#111">2</text><rect x="2" y="9" width="16" height="16" fill="#121212"></rect><path d="M6 11.5 L15 17 L6 22.5 L6 19.6 L10.5 17 L6 14.4Z" fill="#fff"></path></svg> kitérő, a csúcs felől nézve (a nyíl a kitérés felé mutat) &nbsp; <svg class="swsign" viewBox="0 0 20 28" aria-hidden="true"><rect x="2" y="1" width="16" height="8" fill="#f4f0e2" stroke="#111"></rect><text x="10" y="7.4" font-size="6.5" font-weight="700" text-anchor="middle" fill="#111">2</text><rect x="2" y="9" width="16" height="16" fill="#121212"></rect><rect x="5" y="15" width="10" height="4" fill="#fff"></rect></svg> kitérő, a gyök felől nézve</span>A váltó mindig a simuló csúcssín felé terel. A terepasztalon minden váltó mellett ott a váltójelzője, fölötte a váltó száma; a zöld keret azt jelzi, hogy a váltó vágányúttal le van zárva. (Gyermekvasutas tankönyv, F1-34–35)</dd>
           <dt>Csúcs, gyök</dt><dd>A váltó csúcssínek felőli vége a csúcs (itt ágazik el a két irány), a másik vége a gyök. Csúccsal szemben haladva a váltó állása dönti el, merre megy a vonat; gyök felől haladva a vonat csak a beállított ágról jöhet rá.</dd>
           <dt>Foglaltság</dt><dd>A szigetelt szakaszon vonat van (piros). Foglalt szakaszon a váltó nem állítható, és oda (hívójelzés nélkül) vágányút sem állítható.</dd>
-          <dt>Oldás</dt><dd>A vonat mögött a vágányút szakaszai maguktól felszabadulnak. Jelzőállítás előtt: Törlés. Jelzőállítás után a menet csak kényszeroldással törölhető (időzített).</dd>
+          <dt>Oldás</dt><dd>A vonat mögött a vágányút szakaszai maguktól felszabadulnak. Bejáratnál a fogadóvágány utolsó szakasza (céllezárás) csak 2 perccel a vonat beérkezése után, vagy a kijárati jelző meghaladásakor oldódik. Kézzel: Vg.út visszav. + célgomb (amíg a vonat be nem lépett, közeledő vonatnál 3 perc), Vg.út kényszeroldás + célgomb (mindig 3 perc), Tárolás törlés + célgomb.</dd>
           <dt>Bejárati / kijárati jelző</dt><dd>A, B, C, D (nyugat) és M, L, H (kelet) a bejárati jelzők, E és F a Kőbánya-Teher felőli közbenső jelzők. K1–K11 nyugat felé, V1–V11 kelet felé engedi ki a vonatot.</dd>
           <dt>Előjelző</dt><dd>A bejárati jelző előtt áll, előre jelzi annak állását, hogy a vonat időben fékezhessen.</dd>
           <dt>Térköz, térközjelző</dt><dd>A nyílt vonal szakaszai. A térközjelző (141/142, 161/162) önműködően véd az előtte haladó vonattól.</dd>
@@ -893,7 +893,7 @@ body.bz-course .tu-head span{letter-spacing:.06em}
           <dt>Megelőzés</dt><dd>A lassabb vonat mellékvágányra áll, a gyorsabb az átmenő fővágányon elhalad mellette.</dd>
           <dt>Hívójelzés</dt><dd>Villogó fehér fény a vörös alatt: a vonat legfeljebb 15 km/h-val, a berendezés ellenőrzése nélkül haladhat. Csak hiba vagy foglalt vágány esetén!</dd>
           <dt>Kulcsos váltó</dt><dd>Az iparvágányok és a metró-összekötő kiágazásának váltója. Nem a pultról, hanem helyben, kulccsal állítható; vonatút csak egyenes, lezárt állásban vezethet át rajta.</dd>
-          <dt>Fogadási engedély</dt><dd>A szomszéd állomás a telefonpanelen megadott engedély után indíthatja a vonatot. A bejárati vágányutat és a jelzőt külön kell kezelni.</dd>
+          <dt>Fogadási engedély</dt><dd>A szomszéd állomás a telefonpanelen megadott engedély után indíthatja a vonatot. Ezután állíthatod be a bejárati vágányutat.</dd>
           <dt>Menesztés</dt><dd>Az álló vonat adatlapjáról hívd a célállomást. Engedéllyel és szabad kijárati jelzőnél a tárcsás gombbal menesztheted a vonatot, vagy írásban késleltetheted az indulását. Amikor a vonat kihaladt, az indulási időközlést a játék automatikusan leadja a célállomásnak. Áthaladó vonatnál az indulási engedélyt előre kérd: kattints a vonat sorára a Menetrendben (a fogadási engedély után). A kijárati jelző csak az engedély után vált szabadra.</dd>
         </dl>
       </details>
@@ -954,10 +954,10 @@ body.bz-course .tu-head span{letter-spacing:.06em}
       <li><b>Idő</b> 1× sebességgel indul. Az Állj gomb szünetelteti, a csúszka tekeri.</li>
     </ul>
     <table class="help-keys">
-      <tbody><tr><th>Vágányút</th><td>kezdőgomb + célgomb</td></tr>
-      <tr><th>Jelző szabadra</th><td>a jelző gombja + Jelzőáll. (vagy fordítva)</td></tr>
-      <tr><th>Feloldás</th><td>Törlés + a kezdőjelző gombja</td></tr>
-      <tr><th>Váltó</th><td>Közös áll. + a váltó gombja</td></tr>
+      <tbody><tr><th>Vágányút</th><td>kezdőgomb + célgomb (a vonat haladási sorrendjében)</td></tr>
+      <tr><th>Jelző szabadra</th><td>magától, a vágányút beállásakor</td></tr>
+      <tr><th>Feloldás</th><td>Vg.út visszav. + a vágányút célgombja</td></tr>
+      <tr><th>Váltó</th><td>Közös vez. + a váltó gombja</td></tr>
       <tr><th>Kőbánya-Teher felől</th><td>D/C → F/E közbenső jelző, onnan tovább a vágányra</td></tr>
       <tr><th>Kulcsos váltók</th><td>A/3, A/5, A/7, 2, 38/1: a terepasztalon, kulccsal.</td></tr>
     </tbody></table>
@@ -1300,7 +1300,7 @@ let speed = 0;
 let active = [];
 const activeFrom = {};
 let ASP = {};
-const COUNT = { HB: 0, HK: 0, SK: 0, KO: 0 };
+const COUNT = { HB: 0, HK: 0, HJ: 0, SK: 0, KO: 0, JM: 0 };
 const logEl = $('#log');
 function msg(text, kind = 'info', phone = false) {
   const d = document.createElement('div');
@@ -1409,6 +1409,7 @@ function jelzoAllit(id) {
   if (!r) { msg(`Jelzőállítás: a(z) ${id} jelzőről nincs lezárt vágányút.`, 'err'); return; }
   if (r.train) { msg(`Jelzőállítás: a vágányút már felhasználva.`, 'err'); return; }
   if (r.forceAt) { msg(`Jelzőállítás: kényszeroldás folyamatban.`, 'err'); return; }
+  if (r.jm) { msg(`Jelzőállítás: a(z) ${id} jelzőt Jelző M!-mal Megállj!-ra kapcsoltad, újra szabadra csak a vágányút feloldása (kényszeroldás) után állítható.`, 'err'); return; }
   if (r.def.shunt) { msg(`Jelzőállítás: a(z) ${id} jelzőről tolatóvágányút van lezárva, a jelző magától áll szabadra a tolatásra.`, 'info'); return; }
   r.sigReq = true; r.second = true;
   const waiting = exitWaitsForPermission(r);
@@ -1419,7 +1420,7 @@ function jelzoM(id) {
   const r = activeFrom[id];
   if (SIGS[id].hivoUntil > now) { SIGS[id].hivoUntil = 0; msg(`${id}: hívójelzés megszüntetve.`, 'warn'); return; }
   if (!r || !r.sigReq) { msg(`Jelző M!: a(z) ${id} jelző nem mutat szabad jelzést.`, 'info'); return; }
-  r.sigReq = false; msg(`Jelző M!: ${id} Megállj! állásba kapcsolva, a vágányút lezárva marad. Feloldani kényszeroldással lehet.`, 'warn');
+  r.sigReq = false; r.jm = true; COUNT.JM++; msg(`Jelző M!: ${id} Megállj! állásba kapcsolva, a vágányút lezárva marad. Feloldani kényszeroldással lehet, a jelző addig nem állítható újra szabadra.`, 'warn');
 }
 function cancelRoute(r, silent) {
   for (const s of r.def.secs) if (SEC[s].lock === r.id) SEC[s].lock = null;
@@ -1436,7 +1437,7 @@ function torles(id) {
   if (r.second) { msg(`Törlés hatástalan: a(z) ${id} jelzőt már szabadra állítottad. Jelzőállítás után a menet csak kényszeroldással törölhető${r.sigReq ? ' (előtte Jelző Megállj!)' : ''}.`, 'err'); return; }
   cancelRoute(r);
 }
-function kenyszerOldas(id) {
+function kenyszerOldasStart(id) {
   showHands('pCommon:KO', 'pSig:' + id);
   const r = activeFrom[id];
   if (!r) { msg(`Kényszeroldás: a(z) ${id} jelzőről nincs lezárt vágányút.`, 'info'); return; }
@@ -1449,14 +1450,121 @@ function kenyszerOldas(id) {
   computeAspects();
 }
 const KO_DELAY = 180, KO_NEAR = 1200;
+let STORED = [];
+const storedTo = t => STORED.find(q => q.def.end === t || q.def.dest.includes(t));
+function removeStored(q) { STORED = STORED.filter(x => x !== q); }
+function routeToTarget(t) { return active.find(r => r.def.end === t || r.def.dest.includes(t)); }
+function hitKey(t) { return TARGETS[t] ? 'pTarget:' + t : Object.values(ENDB).some(b => b.id === t) ? 'pEnd:' + t : 'pSig:' + t; }
+function approachSec(id) {
+  const s = SIGS[id], x0 = P[s.node][0];
+  const e = EDGES.find(E => (E.a === s.node || E.b === s.node) && Math.sign(P[E.a === s.node ? E.b : E.a][0] - x0) === -s.dir);
+  return e ? e.sec : null;
+}
+function pultRoute(def) {
+  if (STORED.some(q => q.def.start === def.start)) { msg(`A(z) ${def.start} jelzőről már van tárolt vágányút.`, 'err'); return false; }
+  if (!def.shunt && SIGS[def.start].kind !== 'entry') {
+    const before = approachSec(def.start);
+    const fed = active.some(r => r.def.end === def.start) || STORED.some(q => q.def.end === def.start);
+    if (!fed && !(before && SEC[before].occ)) {
+      msg(`${def.name}: a berendezés nem fogadja el. Vonatvágányút a(z) ${def.start} jelzőtől csak akkor állítható, ha előtte jármű áll, vagy a jelzőhöz már van vágányút beállítva vagy tárolva.`, 'err');
+      return false;
+    }
+  }
+  if (SIGS[def.end] && !def.shunt && (active.some(r => r.def.shunt && r.def.start === def.end) || STORED.some(q => q.def.start === def.end))) {
+    msg(`${def.name}: a(z) ${def.end} céljelzőtől továbbvezető ${active.some(r => r.def.shunt && r.def.start === def.end) ? 'tolatóvágányút van beállítva' : 'vágányút van tárolva'}, ezért a kezelés hatástalan.`, 'err');
+    return false;
+  }
+  const p = routeProblem(def);
+  if (!p) return setRoute(def, true);
+  if (STORED.some(q => q.def.secs.some(x => def.secs.includes(x)))) { msg(`${p} Tárolni sem lehet, mert egy már tárolt vágányutat érint.`, 'err'); return false; }
+  STORED.push({ def, at: now });
+  showHands('pSig:' + def.start, def.line ? 'pTarget:c' + def.line : def.shunt ? 'pEnd:' + def.end : 'pSig:' + def.end);
+  msg(`Vágányút tárolva: ${def.name}. ${p} A gombok villognak, a vágányút a feltétel megszűnésekor magától beáll.`, 'info');
+  return true;
+}
+function serveStored() {
+  for (const q of STORED.slice()) {
+    if (routeProblem(q.def)) continue;
+    removeStored(q);
+    if (setRoute(q.def, true)) msg(`Tárolt vágányút beállt: ${q.def.name}.`, 'ok');
+  }
+}
+function tarolasTorles(t) {
+  showHands('pCommon:TT', hitKey(t));
+  const q = storedTo(t);
+  if (!q) { msg(`Tárolástörlés: a(z) ${t} célponthoz nincs tárolt vágányút.` + (routeToTarget(t) ? ' A beállított vágányutat a Vágányút visszavonás gombbal lehet feloldani.' : ''), 'info'); return; }
+  removeStored(q); msg(`Tárolt vágányút törölve: ${q.def.name}.`, 'warn');
+}
+function visszavonas(t) {
+  showHands('pCommon:VI', hitKey(t));
+  const r = routeToTarget(t), q = storedTo(t);
+  if (!r) {
+    if (q) { removeStored(q); msg(`Tárolt vágányút törölve: ${q.def.name}.`, 'warn'); }
+    else msg(`Vágányút visszavonás: a(z) ${t} célponthoz nincs beállított vágányút.`, 'info');
+    return;
+  }
+  if (r.train) { msg(`Visszavonás hatástalan: a vonat már behaladt a(z) ${r.def.name} vágányútba. Feloldani csak kényszeroldással lehet.`, 'err'); return; }
+  if (r.forceAt) return;
+  if (q) removeStored(q);
+  r.sigReq = false;
+  if (r.def.shunt) { r.forceAt = now + 60; msg(`Tolatóvágányút visszavonása: ${r.def.name} – Tilos a tolatás!, az oldás 1 perc múlva.`, 'warn'); computeAspects(); return; }
+  COUNT.JM++;
+  const near = trains.find(tr => tr.state === 'run' && tr.nextSig === r.def.start && tr.nextSigDist < KO_NEAR);
+  if (near) {
+    r.forceAt = now + KO_DELAY;
+    msg(`Vágányút visszavonás: ${r.def.name} – a jelző Megállj!, a(z) ${near.no} sz. vonat már a közelítési szakaszban van, ezért az oldás 3 perc múlva történik (Jelző M! számláló: ${COUNT.JM}).`, 'warn');
+  } else {
+    cancelRoute(r, true);
+    msg(`Vágányút visszavonva: ${r.def.name} (Jelző M! számláló: ${COUNT.JM}).`, 'warn');
+  }
+  computeAspects();
+}
+function kenyszerOldas(t) {
+  showHands('pCommon:KO', hitKey(t));
+  const r = routeToTarget(t);
+  if (!r) { msg(`Kényszeroldás: a(z) ${t} célponthoz nincs beállított vágányút.`, 'info'); return; }
+  if (r.forceAt) return;
+  COUNT.KO++; r.sigReq = false;
+  const q = storedTo(t); if (q) removeStored(q);
+  if (r.def.shunt) {
+    r.forceAt = now + 0.01;
+    msg(`Tolatóvágányút kényszeroldása: ${r.def.name} (számláló: ${COUNT.KO}).`, 'warn');
+    if (!r.def.secs.some(x => SEC[x].occ)) cancelRoute(r, true);
+  } else {
+    r.forceAt = now + KO_DELAY;
+    msg(`Kényszeroldás: ${r.def.name} – a jelző Megállj!, a vágányút 3 perc múlva oldódik (számláló: ${COUNT.KO}).`, 'warn');
+  }
+  computeAspects();
+}
+function mapCancel(id) {
+  const r = activeFrom[id];
+  if (r) return visszavonas(r.def.line ? 'c' + r.def.line : r.def.end);
+  const q = STORED.find(x => x.def.start === id);
+  if (q) { removeStored(q); msg(`Tárolt vágányút törölve: ${q.def.name}.`, 'warn'); return; }
+  msg(`${id}: nincs beállított vagy tárolt vágányút.`, 'info');
+}
+function celEdge(e) {
+  const r = active.find(x => x.id === SEC[e.sec].lock);
+  if (!r || r.celAt == null || r.def.shunt || !r.def.track || !SIGS[r.def.end] || r.def.secs[r.def.secs.length - 1] !== e.sec) return false;
+  const n = SIGS[r.def.end].node;
+  return e.a === n || e.b === n;
+}
+function celFree(r, tr) {
+  if (r.def.shunt || !r.def.track || SIGS[r.def.start].kind !== 'entry') return true;
+  if ((tr.passedSigs || []).includes(r.def.end)) return true;
+  return r.celAt != null && now - r.celAt >= 120;
+}
+function blinkRoute(match) {
+  return STORED.some(q => match(q.def)) || active.some(r => !r.train && !switchesReady(r) && match(r.def));
+}
+const D70_OPS = { JM: id => jelzoM(id), HJ: id => hivo(id), TT: t => tarolasTorles(t), VI: t => visszavonas(t), KO: t => kenyszerOldas(t) };
 function hivo(id, which) {
   if (!SIGS[id] || (!START_SIGS.has(id) && SIGS[id].kind !== 'exit')) return;
   const kind = SIGS[id].kind;
-  showHands('pCommon:' + (which || (kind === 'entry' ? 'HB' : 'HK')), 'pSig:' + id);
-  if (which && ((which === 'HB') !== (kind === 'entry'))) { msg(`Ez a hívógomb ${which === 'HB' ? 'bejárati' : 'kijárati'} jelzőkhöz való.`, 'err'); return; }
-  if (SIGS[id].hivoUntil > now) { SIGS[id].hivoUntil = 0; msg(`${id}: hívójelzés megszüntetve.`, 'warn'); return; }
-  SIGS[id].hivoUntil = now + 90; COUNT[kind === 'entry' ? 'HB' : 'HK']++;
-  msg(`HÍVÓJELZÉS a(z) ${id} jelzőn (90 mp). A berendezés semmit sem ellenőriz – a váltókért te felelsz!`, 'warn');
+  showHands('pCommon:HJ', 'pSig:' + id);
+  if (SIGS[id].hivoUntil > now) { msg(`${id}: a hívójelzés már ki van vezérelve. Megszüntetni a Jelző Megállj! gombbal lehet.`, 'info'); return; }
+  SIGS[id].hivoUntil = now + 86400; COUNT.HJ++;
+  msg(`HÍVÓJELZÉS a(z) ${id} jelzőn (számláló: ${COUNT.HJ}). A berendezés semmit sem ellenőriz – a váltókért, a vágányút szabad voltáért te felelsz! A vonat a jelzőt meghaladva kapcsolja le.`, 'warn');
 }
 function manualSwitch(id, pos, bypass) {
   if (LOCAL_SWITCHES.has(id)) {
@@ -2292,9 +2400,9 @@ function releaseRoutes() {
       if (r.rel[i]) continue;
       const sec = r.def.secs[i];
       const covered = tr.secs.has(sec);
-      if (covered) r.vis[i] = true;
+      if (covered) { r.vis[i] = true; if (i === n - 1 && r.celAt == null) r.celAt = now; }
       const prevOk = i === 0 || r.rel[i - 1];
-      if (r.vis[i] && prevOk && (!covered || i === n - 1)) {
+      if (r.vis[i] && prevOk && (!covered || (i === n - 1 && celFree(r, tr)))) {
         r.rel[i] = true;
         if (SEC[sec].lock === r.id) SEC[sec].lock = null;
       }
@@ -2355,7 +2463,7 @@ function step(dt) {
   computeOcc();
   for (const tr of trains) if (tr.state === 'run' && tr.restrict && tr.cover.length &&
       tr.cover.every(c => Object.values(LINES).some(L => L.secs.includes(EDGE[c.e].sec)))) tr.restrict = null;
-  releaseRoutes();
+  releaseRoutes(); serveStored();
   releaseLineDirections();
   updateSR();
   computeAspects();
@@ -3718,17 +3826,16 @@ function drawTrainLabel(c, cm, tr, k, hits) {
 }
 let armed = null, armedAt = 0, pStart = null, pStartAt = 0, showStems = false;
 const COMMON = {
-  HB: { x: 300, y: 880, label: ['Bejárat', 'hívójelz.'], col: '#f4f0df', cnt: 'HB' },
-  HK: { x: 370, y: 880, label: ['Kijárat', 'hívójelz.'], col: '#f4f0df', cnt: 'HK' },
-  SK: { x: 440, y: 880, label: ['Szig.', 'kikapcs.'], col: '#f4f0df', cnt: 'SK' },
-  KO: { x: 510, y: 880, label: ['Kényszer', 'oldás'], col: '#c8402e', cnt: 'KO' },
-  JM: { x: 590, y: 880, label: ['Jelző', 'Megállj!'], col: '#c8402e' },
-  KA: { x: 700, y: 880, label: ['Közös', 'áll.'], col: '#1b1812' },
-  TO: { x: 765, y: 880, label: ['Törlés', ''], col: '#3dbf5a' },
-  JA: { x: 830, y: 880, label: ['Jelző-', 'áll.'], col: '#c8402e' },
-  VV: { x: 895, y: 880, label: ['Váltó', 'vissz.'], col: '#f4f0df' },
+  HJ: { x: 300, y: 880, label: ['Hívó-', 'jelzés'], col: '#f4f0df', cnt: 'HJ' },
+  SK: { x: 370, y: 880, label: ['Szig.', 'kikapcs.'], col: '#f4f0df', cnt: 'SK' },
+  KO: { x: 440, y: 880, label: ['Vg.út kény-', 'szeroldás'], col: '#c8402e', cnt: 'KO' },
+  JM: { x: 510, y: 880, label: ['Jelző', 'Megállj!'], col: '#c8402e', cnt: 'JM' },
+  VI: { x: 590, y: 880, label: ['Vg.út', 'visszav.'], col: '#c8402e' },
+  KA: { x: 700, y: 880, label: ['Közös', 'vez.'], col: '#1b1812' },
+  TT: { x: 765, y: 880, label: ['Tárolás', 'törlés'], col: '#3dbf5a' },
+  VV: { x: 830, y: 880, label: ['Váltó', 'vissz.'], col: '#f4f0df' },
 };
-const ARM_TEXT = { HB: 'Bejárat hívójelzés + bejárati jelző gombja', HK: 'Kijárat hívójelzés + kijárati jelző gombja', SK: 'Szigetelés kikapcs. + váltógomb', KO: 'Kényszeroldás + kezdőjelző gombja', JM: 'Jelző M! + jelző gombja', KA: 'Közös állítás + váltó gombja', TO: 'Törlés + kezdőjelző gombja', JA: 'Jelzőállítás + jelző gombja' };
+const ARM_TEXT = { HJ: 'Hívójelzés + a jelző kezdőgombja', SK: 'Szigetelés kikapcs. + váltógomb', KO: 'Vonatvágányút kényszeroldás + a vágányút célgombja', JM: 'Jelző Megállj! + a jelző kezdőgombja', VI: 'Vonatvágányút visszavonás + a vágányút célgombja', KA: 'Közös vezérlés + váltó gombja', TT: 'Tárolástörlés + a tárolt vágányút célgombja' };
 const SWBTN = Object.fromEntries(SW_ORDER.map((id, i) => [id, [1010 + (i % 27) * 38, 868 + Math.floor(i / 27) * 62]]));
 const lineAt = (L, f) => [P[L.end][0] + (P[L.entry][0] - P[L.end][0]) * f, P[L.end][1]];
 const TARGETS = Object.fromEntries(Object.values(LINES).map(L => ['c' + L.id, lineAt(L, 0.3)]));
@@ -3777,7 +3884,7 @@ function drawPult(c, cm) {
     const pp = trimPoly(p, (t.s ? gap : 0) + 2, (t.e ? gap : 0) + 2);
     strokePoly(c, p, '#0d0b08', 7 * z + 1);
     const s = SEC[e.sec];
-    const col = occLit.has(e.id) ? '#ff2a1a' : edgeRouteLocked(e) ? '#f4f0df' : null;
+    const col = celEdge(e) ? '#f4f0df' : occLit.has(e.id) ? '#ff2a1a' : edgeRouteLocked(e) ? '#f4f0df' : null;
     if (col) { c.shadowColor = col; c.shadowBlur = 2 * pultGlow; strokePoly(c, pp, col, 3.6 * z, [10 * z, 3 * z]); c.shadowBlur = 0; }
     else strokePoly(c, pp, '#26221b', 3.6 * z, [10 * z, 3 * z]);
   }
@@ -3800,11 +3907,11 @@ function drawPult(c, cm) {
     c.strokeStyle = '#0d0b08'; c.lineWidth = 2.5 * z; c.beginPath(); c.moveTo(lx - s.dir * 12 * z, ly - 5 * z); c.lineTo(lx - s.dir * 12 * z, ly + 5 * z); c.moveTo(lx - s.dir * 12 * z, ly); c.lineTo(lx, ly); c.stroke();
     c.fillStyle = '#0d0b08'; c.beginPath(); c.arc(lx, ly, 6.5 * z, 0, 7); c.fill();
     const r = activeFrom[id];
-    lampDot(c, lx, ly, 4.6 * z, r && r.def.shunt && r.sigReq && !r.forceAt && switchesReady(r) ? '#f4f0df' : a === 'VOROS' ? '#ff2a1a' : a === 'HIVO' ? (blink % 0.8 < 0.4 ? '#f4f0df' : '#ff2a1a') : '#3dff7a');
-    const foot = pStart === id ? (blink % 0.6 < 0.4 ? '#ffd23a' : null) : r && !r.second && !r.train && !r.def.shunt ? (!switchesReady(r) && blink % 0.5 < 0.25 ? null : '#ffd23a') : null;
+    lampDot(c, lx, ly, 4.6 * z, r && r.def.shunt && r.sigReq && !r.forceAt && switchesReady(r) ? '#f4f0df' : a === 'VOROS' ? (active.some(q => !q.def.shunt && q.def.end === id) ? '#ff2a1a' : null) : a === 'HIVO' ? (blink % 0.8 < 0.4 ? '#f4f0df' : '#ff2a1a') : '#3dff7a');
+    const foot = pStart === id ? (blink % 0.6 < 0.4 ? '#ffd23a' : null) : null;
     if (foot) lampDot(c, lx - s.dir * 12 * z, ly + side * 9 * z, 2.6 * z, foot);
-    if (r && r.forceAt > now) { lampDot(c, lx + s.dir * 2 * z, ly - side * 11 * z, 2.6 * z, '#f4f0df'); pText(c, 'KO', lx + s.dir * 2 * z, ly - side * 19 * z, fs(9), '#f4f0df'); }
-    pButton(c, x, y, 8 * z, '#c8402e', '#3dbf5a', pStart === id, false);
+    if ((r && r.forceAt > now && s.kind === 'entry') || active.some(q => q.def.end === id && q.forceAt > now && SIGS[q.def.start].kind !== 'entry')) lampDot(c, lx + s.dir * 2 * z, ly - side * 11 * z, 2.6 * z, '#f4f0df');
+    pButton(c, x, y, 8 * z, '#c8402e', '#3dbf5a', pStart === id || (blinkRoute(d => d.start === id || d.end === id) && blink % 0.6 < 0.35), false);
     pText(c, id, lx - s.dir * 2 * z, ly + side * 15 * z, fs(13));
     hits.push({ type: 'pSig', id, x, y, rx: 12 * z, ry: 12 * z });
   }
@@ -3815,13 +3922,14 @@ function drawPult(c, cm) {
   for (const b of Object.values(ENDB)) {
     const [x, y] = W2S(cm, ...P[b.node]);
     const r = active.find(q => q.def.shunt && q.def.end === b.id);
-    pButton(c, x, y, 7.5 * z, '#d9d4c3', b.dir > 0 ? '#3b7fd9' : '#a19e93', !!r, false);
+    pButton(c, x, y, 7.5 * z, '#d9d4c3', b.dir > 0 ? '#3b7fd9' : '#a19e93', blinkRoute(d => d.shunt && d.end === b.id) ? blink % 0.6 < 0.35 : !!r, false);
     pText(c, b.id, x + b.dir * 14 * z, y, fs(12), null, b.dir > 0 ? 'left' : 'right');
     hits.push({ type: 'pEnd', id: b.id, x, y, rx: 12 * z, ry: 12 * z });
   }
   for (const [id, xy] of Object.entries(TARGETS)) {
     const [x, y] = W2S(cm, ...xy);
-    pButton(c, x, y, 8 * z, '#3dbf5a', '#3dbf5a', false);
+    if (active.some(q => q.def.dest.includes(id) && q.forceAt > now)) lampDot(c, x, y - 15 * z, 2.6 * z, '#f4f0df');
+    pButton(c, x, y, 8 * z, '#3dbf5a', '#3dbf5a', blinkRoute(d => d.dest.includes(id)) && blink % 0.6 < 0.35);
     hits.push({ type: 'pTarget', id, x, y, rx: 12 * z, ry: 12 * z });
   }
   for (const L of Object.values(LINES)) {
@@ -3860,7 +3968,7 @@ function drawPult(c, cm) {
   for (const h of hits) if (guideHL.pult.has(h.type + ':' + h.id)) drawGuideRing(c, h.x, h.y, h.rx);
   drawPultHands(c, hits, z);
   hitCache.set(c.canvas, hits);
-  $('#pultHint').textContent = armed ? ARM_TEXT[armed] + ' …' : pStart ? (activeFrom[pStart] && !activeFrom[pStart].sigReq ? `${pStart} – nyomd meg a Jelzőáll. gombot` : `Kezdőgomb: ${pStart} – nyomd meg a célgombot`) : 'Kezdőgomb → célgomb';
+  $('#pultHint').textContent = armed ? ARM_TEXT[armed] + ' …' : pStart ? `Kezdőgomb: ${pStart} – nyomd meg a célgombot` : 'Kezdőgomb → célgomb';
 }
 function pultToWorld(px, py) {
   return [X(clamp(px, 40, 2085)), RY(clamp(py, 300, 820))];
@@ -3881,20 +3989,19 @@ function pultClick(el, at) {
   if (el.type === 'pCommon') {
     if (el.id === 'VV') { showStems = !showStems; return; }
     const ps = pStart; pStart = null;
-    if (ps && performance.now() - pStartAt < 10000 && ['JA', 'TO', 'KO', 'JM'].includes(el.id)) { armed = null; return ({ JA: jelzoAllit, TO: torles, KO: kenyszerOldas, JM: jelzoM })[el.id](ps); }
+    if (ps && performance.now() - pStartAt < 10000 && D70_OPS[el.id]) { armed = null; return D70_OPS[el.id](ps); }
     armed = armed === el.id ? null : el.id; armedAt = performance.now(); return;
   }
   const a = armed; armed = null;
+  if (a && D70_OPS[a] && (el.type === 'pSig' || el.type === 'pTarget' || el.type === 'pEnd')) {
+    if (el.type !== 'pSig' && (a === 'JM' || a === 'HJ')) return msg('A Jelző Megállj! és a Hívójelzés a jelző kezdőgombjával együtt kezelendő.', 'err');
+    return D70_OPS[a](el.id);
+  }
   if (el.type === 'pSig') {
-    if (a === 'JA') return jelzoAllit(el.id);
-    if (a === 'TO') return torles(el.id);
-    if (a === 'KO') return kenyszerOldas(el.id);
-    if (a === 'JM') return jelzoM(el.id);
-    if (a === 'HB' || a === 'HK') return hivo(el.id, a);
     if (a) return msg('Ez a közös gomb nem jelzőgombbal együtt kezelendő.', 'err');
     if (pStart && pStart !== el.id) {
       const def = ROUTES.find(r => r.start === pStart && r.end === el.id);
-      if (def) { pStart = null; return setRoute(def); }
+      if (def) { pStart = null; return pultRoute(def); }
       if (SIGS[pStart]?.kind === 'exit' && LINE_AT[el.id] && SIGS[el.id].dir === -SIGS[pStart].dir) {
         pStart = null;
         return msg(`Kijáratnál a vágányút célja a vonal melletti zöld vágányúti célgomb (${LINES[LINE_AT[el.id]].name} felé), nem a bejárati jelző gombja.`, 'err');
@@ -3908,14 +4015,14 @@ function pultClick(el, at) {
     if (!pStart) return msg(st.length ? `A(z) ${el.id} végponti gomb tolatási célgomb: előbb a kezdő jelző (${st.join(', ')}) gombját nyomd meg.` : `A(z) ${el.id} végponti gombra nem vezet tolatóvágányút.`, 'info');
     const def = ROUTES.find(r => r.start === pStart && r.end === el.id);
     const s = pStart; pStart = null;
-    if (def) return setRoute(def, true);
+    if (def) return pultRoute(def);
     return msg(`A(z) ${s} jelzőtől nem vezet tolatóvágányút a(z) ${el.id} végponti gombra.`, 'err');
   }
   if (el.type === 'pTarget') {
     if (!pStart) return msg('Előbb a kijárati jelző kezdőgombját nyomd meg.', 'info');
     const def = ROUTES.find(r => r.start === pStart && r.dest.includes(el.id));
     const s = pStart; pStart = null;
-    if (def) return setRoute(def);
+    if (def) return pultRoute(def);
     return msg(`A(z) ${s} jelzőtől nem vezet vágányút erre a célgombra.`, 'err');
   }
   pStart = null;
@@ -3923,10 +4030,10 @@ function pultClick(el, at) {
     if (LOCAL_SWITCHES.has(el.id)) return msg(`A(z) ${el.id} kulcsos váltót a terepasztalon, kulccsal lehet kezelni.`, 'info');
     if (a === 'KA') return manualSwitch(el.id);
     if (a === 'SK') return manualSwitch(el.id, undefined, true);
-    return msg(`A(z) ${el.id}. váltó gombja a „Közös áll.” gombbal együtt kezelendő.`, 'info');
+    return msg(`A(z) ${el.id}. váltó gombja a „Közös vez.” gombbal együtt kezelendő.`, 'info');
   }
-  if (el.type === 'sr') { if (a === 'KA') return toggleSR(); return msg('Az SR2 gombja a „Közös áll.” gombbal együtt kezelendő.', 'info'); }
-  if (el.type === 'ks') { if (a === 'KA') return toggleKS(el.id); return msg(`A ${el.id} gombja a „Közös áll.” gombbal együtt kezelendő.`, 'info'); }
+  if (el.type === 'sr') { if (a === 'KA') return toggleSR(); return msg('Az SR2 gombja a „Közös vez.” gombbal együtt kezelendő.', 'info'); }
+  if (el.type === 'ks') { if (a === 'KA') return toggleKS(el.id); return msg(`A ${el.id} gombja a „Közös vez.” gombbal együtt kezelendő.`, 'info'); }
 }
 function swFacing(w) { const T = EDGE[w.trunk], other = T.a === w.node ? T.b : T.a; return NDEF[other][0] < NDEF[w.node][0] ? 1 : -1; }
 function swArrowRight(w) { return (swFacing(w) > 0) === w.below; }
@@ -4200,11 +4307,11 @@ function mapClick(el, mods) {
     if (selStart) {
       if (selStart === el.id) { selStart = null; return; }
       const def = ROUTES.find(r => r.start === selStart && r.dest.includes(el.id));
-      if (def) { setRoute(def, true); selStart = null; return; }
+      if (def) { pultRoute(def); selStart = null; return; }
     }
     if (START_SIGS.has(el.id)) {
       const r = activeFrom[el.id];
-      if (r) { if (!r.sigReq && !r.train) jelzoAllit(el.id); else msg(`${el.id}: ${r.def.name} már lezárva. Jobb klikk: törlés.`, 'info'); selStart = null; return; }
+      if (r) { msg(`${el.id}: ${r.def.name} már lezárva. Jobb klikk: visszavonás.`, 'info'); selStart = null; return; }
       selStart = el.id; msg(`Kezdőjelző: ${el.id}. Kattints a célvágányra.`, 'info');
     } else msg(`${SIGS[el.id].label} – önműködő térközjelző: ${ASP_NAME[ASP[el.id]]}.`, 'info');
     return;
@@ -4213,7 +4320,7 @@ function mapClick(el, mods) {
   if (el.type === 'section' || el.type === 'end') {
     if (selStart) {
       const def = ROUTES.find(r => r.start === selStart && r.dest.includes(el.id));
-      if (def) setRoute(def, true); else msg(`A(z) ${selStart} jelzőtől nincs ide vágányút.`, 'err');
+      if (def) pultRoute(def); else msg(`A(z) ${selStart} jelzőtől nincs ide vágányút.`, 'err');
       selStart = null;
     }
     return;
@@ -4259,7 +4366,7 @@ function setupCanvasInput(c, cm, isMap) {
   c.addEventListener('contextmenu', e => {
     e.preventDefault();
     const [x, y] = pos(e); const el = hitTest(c, cm, x, y, isMap, false);
-    if (el && (el.type === 'signal' || el.type === 'pSig')) torles(el.id); else { selStart = null; armed = null; pStart = null; }
+    if (el && (el.type === 'signal' || el.type === 'pSig')) mapCancel(el.id); else { selStart = null; armed = null; pStart = null; }
   });
   if (isMap) c.addEventListener('dblclick', e => {
     e.preventDefault();
@@ -4318,7 +4425,7 @@ function showTip(e, el) {
     }
   } else if (el.type === 'signal') {
     const s = SIGS[el.id], r = activeFrom[el.id];
-    html = `<b>${s.label} jelző</b><br>${ASP_NAME[ASP[el.id]]}` + (r ? `<br>Vágányút: ${r.def.name}${r.sigReq ? '' : ' (jelzőállítás nélkül)'}` : '');
+    html = `<b>${s.label} jelző</b><br>${ASP_NAME[ASP[el.id]]}` + (r ? `<br>Vágányút: ${r.def.name}${r.sigReq || r.train ? '' : ' (Megállj!-ra kapcsolva)'}` : '');
   } else if (el.type === 'switch') {
     const w = SW[el.id];
     html = `<b>${el.id}. sz. váltó</b><br>Állás: ${w.moving ? 'állítás alatt…' : w.pos === 'N' ? 'egyenes (+) – a váltójelzőn függőleges fehér téglalap' : 'kitérő (−) – a váltójelzőn a csúcs felől nyíl, a gyök felől vízszintes téglalap'}<br>${SEC[w.sec].lock ? 'Lezárva: ' + SEC[w.sec].lock : SEC[w.sec].occ ? 'Foglalt' : 'Szabad'}<br>Kattintás: állapot és állítás`;
@@ -5067,8 +5174,7 @@ function routeSteps(def) {
   const target = entry ? `a(z) ${def.end} jelzőgombot${def.track ? ' (a célvágány túlsó végén)' : ' (közbenső jelző)'}` : `a zöld vágányúti célgombot (${lineLabel(def.line)} felé, a vonal végén)`;
   const where = entry ? (def.track ? `a(z) ${ROMAN[def.track]} vágányra` : `a(z) ${def.end} közbenső jelzőig`) : `a nyílt vonalra (${LINES[def.line].name} felé)`;
   return [
-    `Pulton: nyomd meg a(z) <b>${def.start}</b> jelzőgombot, majd ${target}. Ez az első lezárás: a váltók átállnak és lezáródnak.`,
-    `Utána: <b>Jelzőáll.</b> + <b>${def.start}</b> gomb – ez a második lezárás, a jelző szabadra vált.`,
+    `Pulton: nyomd meg a(z) <b>${def.start}</b> jelzőgombot, majd ${target}. A váltók átállnak és lezáródnak, a jelző magától szabadra vált.`,
     `Vagy a térképen egyszerre: kattints a(z) <b>${def.start}</b> jelzőre, majd ${where}.`,
   ];
 }
@@ -5077,10 +5183,11 @@ function guideRouteItem(t, def, title, why, urgent) {
     act: { label: 'Végrehajtom', run: () => setRoute(def, true) } };
 }
 function guideSignalItem(t, r, urgent) {
-  return { level: 'action', urgent, t, title: `Állítsd szabadra a(z) ${r.def.start} jelzőt`,
-    why: `A(z) „${r.def.name}” vágányút már lezárva (első lezárás), de a jelző még Megállj!-t mutat. A jelzőt külön kell szabadra állítani (második lezárás).`,
-    steps: [`Pulton: <b>Jelzőáll.</b>, majd a(z) <b>${r.def.start}</b> jelzőgomb.`, `Vagy a térképen kattints a(z) <b>${r.def.start}</b> jelzőre.`],
-    plan: { kind: 'signal', id: r.def.start }, act: { label: 'Végrehajtom', run: () => jelzoAllit(r.def.start) } };
+  const tgt = r.def.line ? 'c' + r.def.line : r.def.end;
+  return { level: 'action', urgent, t, title: `A(z) ${r.def.start} jelző Megállj!-ra kapcsolva`,
+    why: `A(z) „${r.def.name}” vágányút lezárva, de a jelzőt Jelző Megállj!-ra kapcsoltad. Újra szabadra csak a vágányút feloldása és újbóli beállítása után állhat.`,
+    steps: [`Pulton: <b>Vg.út visszav.</b> + a vágányút célgombja (${r.def.line ? 'zöld vágányúti célgomb' : r.def.end}).`, 'Utána állítsd be újra a vágányutat.'],
+    plan: { kind: 'signal', id: r.def.start, target: tgt }, act: { label: 'Végrehajtom', run: () => visszavonas(tgt) } };
 }
 function noteWhy(t) {
   if (t.terminus) return ' Itt végállomás: a szerelvény a vágányon marad, később innen indul vissza.';
@@ -5375,7 +5482,7 @@ function infoData() {
         : w.pos === 'N' ? `Az út ${SW_INFO[s.id][0]} vezet. A váltójelzőn függőleges fehér téglalap.`
         : `Az út ${SW_INFO[s.id][1]} vezet, legfeljebb 40 km/h-val. A váltójelzőn nyíl mutatja az irányt.`,
       why: local ? '' : sec.lock ? `Lezárva („${ROUTE[sec.lock] ? ROUTE[sec.lock].name : sec.lock}”): amíg a vágányút fel nem oldódik, nem állítható.`
-        : sec.occ ? 'Foglalt: vonat van rajta, ezért nem állítható.' : 'Szabad, állítható. A pulton: Közös áll. + a váltó gombja.',
+        : sec.occ ? 'Foglalt: vonat van rajta, ezért nem állítható.' : 'Szabad, állítható. A pulton: Közös vez. + a váltó gombja.',
       act: !local && free ? 'Átállítás' : '', sign: true,
       keyLock: local ? { open: w.keyOut, moving: w.moving, pos: w.pos, problem } : null };
   }
@@ -5735,56 +5842,53 @@ function drawPultHands(c, hits, z) {
 const tutor = { on: false, li: 0, si: 0, okAt: 0, save: null, speed: 0, train: null, key: '', finished: false, done: new Set(), phone: false, phoneAt: 0 };
 try { for (const i of JSON.parse(localStorage.getItem('kobanya-kispest-tutor') || '[]')) tutor.done.add(i); } catch {}
 const tT = () => tutor.train && TRAIN[tutor.train];
-const K = { KA: 'pCommon:KA', JA: 'pCommon:JA', TO: 'pCommon:TO' };
+const K = { KA: 'pCommon:KA', JA: 'pCommon:JA', TO: 'pCommon:TO', TT: 'pCommon:TT', VI: 'pCommon:VI' };
 const pb = t => `<kbd>${t}</kbd>`;
 const LESSONS = [
   { title: 'A pult felépítése', sub: 'Mit látsz, mi micsoda', steps: [
     { do: 'A pult Kőbánya-Kispest vágányhálózatának rajza. Balra Kőbánya-Teher és Ferencváros, jobbra Pestszentlőrinc és Kispest, középen az I–XI. vágány.', why: 'Minden gomb és lámpa ott ül a rajzon, ahol a valóságban a jelző vagy a váltó áll. Így ránézésre látod a helyzetet.' },
     { do: 'A vágányok csíkja jelez: sötét = szabad, fehér = lezárt vágányút, vörös = vonat van rajta.', why: 'A sínek áramköre érzékeli a vonatot. Foglalt szakaszra a berendezés nem enged másik vonatot.' },
-    { do: 'A piros gombok a jelzők gombjai. A, B, C, D a nyugati, M, L, H a keleti bejárati jelzőké, E és F a Kőbánya-Teher felőli közbenső jelzőké, K1–K11 és V1–V11 a kijárati jelzőké.', why: 'A jelző lámpája zöld, ha a jelző szabad. A gomb melletti talpponti lámpa sárgán ég, amíg a vágányút le van zárva, de a jelzőt még nem állítottad.', hl: ['pSig:A', 'pSig:B', 'pSig:C', 'pSig:D', 'pSig:E', 'pSig:F', 'pSig:M', 'pSig:L', 'pSig:H'] },
-    { do: 'Lent a közös gombok. Egyedül semmit sem tesznek: mindig egy másik gombbal együtt, két kézzel kell megnyomni őket.', why: 'A kétkezes kezelés véd a véletlen gombnyomástól. A játékban kattints egymás után a két gombra; az elsőn ott marad a kezed.', hl: ['pCommon:KA', 'pCommon:TO', 'pCommon:JA', 'pCommon:HB', 'pCommon:HK', 'pCommon:SK', 'pCommon:KO', 'pCommon:JM'] },
+    { do: 'A piros gombok a jelzők gombjai. A, B, C, D a nyugati, M, L, H a keleti bejárati jelzőké, E és F a Kőbánya-Teher felőli közbenső jelzőké, K1–K11 és V1–V11 a kijárati jelzőké.', why: 'A jelzőábra Megállj! állásban sötét, szabad jelzésnél zöld. Vörösen annál a jelzőnél világít, amelyikhez vonatvágányút vezet (céljelző).', hl: ['pSig:A', 'pSig:B', 'pSig:C', 'pSig:D', 'pSig:E', 'pSig:F', 'pSig:M', 'pSig:L', 'pSig:H'] },
+    { do: 'Lent a közös gombok. Egyedül semmit sem tesznek: mindig egy másik gombbal együtt, két kézzel kell megnyomni őket.', why: 'A kétkezes kezelés véd a véletlen gombnyomástól. A játékban kattints egymás után a két gombra; az elsőn ott marad a kezed.', hl: ['pCommon:KA', 'pCommon:TT', 'pCommon:VI', 'pCommon:HJ', 'pCommon:SK', 'pCommon:KO', 'pCommon:JM'] },
   ] },
-  { title: 'Váltóállítás', sub: 'Közös áll. + váltógomb', steps: [
-    { do: `Állítsd át a 19-es váltót: ${pb('Közös áll.')} + ${pb('19')}.`, why: 'A váltógomb egyedül nem hat, így véletlenül nem állítható el váltó. Az átállás 3 másodperc, közben a száma villog.', keys: [K.KA, 'pSw:19'], done: () => SW['19'].pos === 'R' && !SW['19'].moving },
-    { do: `Állítsd vissza egyenesbe: ${pb('Közös áll.')} + ${pb('19')}.`, why: 'Az alapállás az egyenes. Lezárt vagy foglalt váltó nem állítható.', keys: [K.KA, 'pSw:19'], done: () => SW['19'].pos === 'N' && !SW['19'].moving },
+  { title: 'Váltóállítás', sub: 'Közös vez. + váltógomb', steps: [
+    { do: `Állítsd át a 19-es váltót: ${pb('Közös vez.')} + ${pb('19')}.`, why: 'A váltógomb egyedül nem hat, így véletlenül nem állítható el váltó. Az átállás 3 másodperc, közben a száma villog.', keys: [K.KA, 'pSw:19'], done: () => SW['19'].pos === 'R' && !SW['19'].moving },
+    { do: `Állítsd vissza egyenesbe: ${pb('Közös vez.')} + ${pb('19')}.`, why: 'Az alapállás az egyenes. Lezárt vagy foglalt váltó nem állítható.', keys: [K.KA, 'pSw:19'], done: () => SW['19'].pos === 'N' && !SW['19'].moving },
   ] },
-  { title: 'Bejárati vágányút', sub: 'Kezdőgomb + célgomb, majd jelzőállítás', steps: [
-    { do: `Bejárat Ferencváros felől a VI. vágányra: ${pb('A')} + ${pb('V6')}.`, why: 'A kezdő- és a célgomb kijelöli az utat. A berendezés maga állítja a váltókat és le is zárja őket: ezt mutatja a fehér csík. Ez az első lezárás.', keys: ['pSig:A', 'pSig:V6'], done: () => activeFrom.A && activeFrom.A.def.id === 'A-V6' },
-    { do: `Meggondoltad magad: töröld a vágányutat: ${pb('Törlés')} + ${pb('A')}.`, why: 'Amíg a jelzőt nem állítottad szabadra, a vágányút a Törlés gombbal feloldható. A fehér csík kialszik, a váltók feloldódnak.', keys: [K.TO, 'pSig:A'], done: () => !activeFrom.A },
-    { do: `Állítsd be újra: ${pb('A')} + ${pb('V6')}.`, why: 'Ugyanaz a kezdő- és célgomb. A talpponti lámpa sárgán ég, amíg a vágányút lezárva várja a jelzőállítást.', keys: ['pSig:A', 'pSig:V6'], done: () => activeFrom.A && activeFrom.A.def.id === 'A-V6' },
-    { do: `Állítsd szabadra a jelzőt: ${pb('Jelzőáll.')} + ${pb('A')}.`, why: 'A jelző csak külön parancsra vált szabadra (második lezárás). A pulton zöld fény jelzi a szabad jelzést, a talpponti lámpa kialszik.', keys: [K.JA, 'pSig:A'], done: () => ASP.A !== 'VOROS' },
-    { do: `Jelzőállítás után a Törlés már nem hat. Állítsd Megállj!-ra: ${pb('Jelző Megállj!')} + ${pb('A')}.`, why: 'A jelző vörösre vált, a vágányút lezárva marad.', keys: ['pCommon:JM', 'pSig:A'], done: () => !activeFrom.A || !activeFrom.A.sigReq },
-    { do: `Oldd fel kényszeroldással: ${pb('Kényszeroldás')} + ${pb('A')}.`, why: 'Élesben ezt csak az állomásfőnök kezelheti. Ha nem közeledik vonat, az oldás azonnali, különben 3 perc késleltetéssel történik, addig a jelzőnél a KO lámpa világít.', keys: ['pCommon:KO', 'pSig:A'], done: () => !activeFrom.A },
+  { title: 'Bejárati vágányút', sub: 'Kezdőgomb + célgomb, a jelző magától szabad', steps: [
+    { do: `Bejárat Ferencváros felől a VI. vágányra: ${pb('A')} + ${pb('V6')}.`, why: 'A kezdő- és a célgomb kijelöli az utat. A Dominó 70-en ez egyetlen kezelés: a berendezés átállítja és lezárja a váltókat (fehér csík), és ha minden feltétel teljesül, a jelző magától szabadra vált. Amíg a váltók állnak, a két gomb villog.', keys: ['pSig:A', 'pSig:V6'], done: () => activeFrom.A && activeFrom.A.def.id === 'A-V6' && ASP.A !== 'VOROS' },
+    { do: 'Nézd a V6 jelzőábráját: vörösen világít.', why: 'A V6 most céljelző, hozzá vezet a vonatvágányút. Megállj! állásban, ha nem cél, a jelzőábra sötét.', hl: ['pSig:V6'] },
+    { do: `Meggondoltad magad: vond vissza: ${pb('Vg.út visszav.')} + ${pb('V6')}.`, why: 'A visszavonás a vágányút célgombjával történik. Mivel vonat nem közeledik, a vágányút azonnal oldódik. A Jelző M! számláló egyet lép.', keys: ['pCommon:VI', 'pSig:V6'], done: () => !activeFrom.A },
+    { do: `Állítsd be újra: ${pb('A')} + ${pb('V6')}, majd kapcsold Megállj!-ra: ${pb('Jelző Megállj!')} + ${pb('A')}.`, why: 'A Jelző Megállj! a kezdőgombbal kezelendő. A vágányút lezárva marad, a jelző újra csak a vágányút feloldása után állhat szabadra.', keys: ['pSig:A', 'pSig:V6'], done: () => !!(activeFrom.A && activeFrom.A.jm) },
+    { do: `Oldd fel kényszeroldással: ${pb('Vg.út kényszeroldás')} + ${pb('V6')}.`, why: 'A kényszeroldás számlált kezelés, és mindig 3 perc múlva old, addig a jelzőnél fehér fényablak világít. A tanpályán gyorsabban telik az idő.', keys: ['pCommon:KO', 'pSig:V6'], rate: 12, done: () => !activeFrom.A },
   ] },
   { title: 'Kijárati vágányút', sub: 'Kijárati jelző + zöld célgomb', steps: [
-    { do: `Kijárat a VI. vágányról Pestszentlőrinc felé: ${pb('V6')} + a jobb oldali ${pb('zöld')} célgomb a Pestszentlőrinc jobb vágánynál.`, why: 'Kijáratnál a cél a nyílt vonal. A menetirány nyila kelet felé fordul: amíg így áll, szemből nem indulhat vonat ezen a vágányon.', keys: ['pSig:V6', 'pTarget:cPSj'], done: () => !!activeFrom.V6 },
-    { do: `Jelzőt szabadra: ${pb('Jelzőáll.')} + ${pb('V6')}.`, why: 'A zöld fény azt jelenti, hogy a térköz szabad. A vonat mögött a vágányút magától, szakaszonként feloldódik.', keys: [K.JA, 'pSig:V6'], done: () => ASP.V6 !== 'VOROS' },
-    { do: `Nem indul vonat. Állítsd Megállj!-ra: ${pb('Jelző Megállj!')} + ${pb('V6')}.`, why: 'Jelzőállítás után a vágányút törléssel már nem oldható, ezért előbb a jelzőt kell Megállj!-ra állítani.', keys: ['pCommon:JM', 'pSig:V6'], done: () => !activeFrom.V6 || !activeFrom.V6.sigReq },
-    { do: `Oldd fel kényszeroldással: ${pb('Kényszeroldás')} + ${pb('V6')}.`, why: 'Feloldás után a menetirány is felszabadul, így a szomszéd állomás újra indíthat vonatot.', keys: ['pCommon:KO', 'pSig:V6'], done: () => !activeFrom.V6 },
+    { do: `Próbáld ki: kijárat a VI. vágányról Pestszentlőrinc felé: ${pb('V6')} + a jobb oldali ${pb('zöld')} célgomb a Pestszentlőrinc jobb vágánynál.`, why: 'A VI. vágány üres, és oda vágányút sincs, ezért a berendezés nem fogadja el. Vonatvágányút csak akkor indulhat egy jelzőtől, ha előtte jármű áll, vagy oda már vezet vágányút.', keys: ['pSig:V6', 'pTarget:cPSj'], done: () => [...logEl.children].some(d => d.textContent.includes('nem fogadja el')) || !!activeFrom.V6 },
+    { do: `Állíts bejáratot a VI. vágányra: ${pb('A')} + ${pb('V6')}.`, why: 'Ez egy áthaladás első fele. Összetett utat mindig a vonat haladási sorrendjében kell állítani.', keys: ['pSig:A', 'pSig:V6'], done: () => !!activeFrom.A },
+    { do: `Most a kijárat: ${pb('V6')} + a jobb oldali ${pb('zöld')} célgomb.`, why: 'A menetirány nyila kelet felé fordul: amíg így áll, szemből nem indulhat vonat ezen a vágányon. A jelzők maguktól szabadra váltanak, az A már a V6 állását is előre jelzi.', keys: ['pSig:V6', 'pTarget:cPSj'], done: () => !!activeFrom.V6 },
+    { do: `Nem jön vonat. Vond vissza a kijáratot: ${pb('Vg.út visszav.')} + a ${pb('zöld')} célgomb, aztán a bejáratot: ${pb('Vg.út visszav.')} + ${pb('V6')}.`, why: 'Mindig a célgombbal vonsz vissza. Feloldás után a menetirány is felszabadul, így a szomszéd állomás újra indíthat vonatot.', keys: ['pCommon:VI', 'pTarget:cPSj'], done: () => !activeFrom.V6 && !activeFrom.A },
   ] },
-  { title: 'Közbenső jelző és rendkívüli gombok', sub: 'Kőbánya-Teher felől két lépésben', steps: [
+  { title: 'Közbenső jelző, tárolás, rendkívüli gombok', sub: 'Kőbánya-Teher felől két lépésben', steps: [
     { do: `Kőbánya-Teher felől a bejárat két részből áll. Először a közbenső jelzőig: ${pb('D')} + ${pb('F')}.`, why: 'A D bejárati jelző mögött, az iparvágányi kiágazás után áll az F közbenső jelző. A D jelző csak eddig enged.', keys: ['pSig:D', 'pSig:F'], done: () => !!activeFrom.D },
     { do: `Folytasd az I. vágányra: ${pb('F')} + ${pb('V1')}.`, why: 'A közbenső jelzőtől külön vágányút vezet a vágányra. Ha ez is áll, a D jelző már az F állását is előre jelzi.', keys: ['pSig:F', 'pSig:V1'], done: () => !!activeFrom.F },
-    { do: `Töröld mindkettőt: előbb ${pb('Törlés')} + ${pb('F')}, aztán ${pb('Törlés')} + ${pb('D')}.`, why: 'Jelzőállítás nélkül mindkét szakasz egyszerűen törölhető.', keys: [K.TO, 'pSig:F'], done: () => !activeFrom.F && !activeFrom.D },
-    { do: 'A rendkívüli gombok: Hívójelzés (bejárat, kijárat), Szigetelés kikapcsolása, Kényszeroldás, Jelző Megállj!.', why: 'Ezek megkerülik a berendezés védelmét, ezért csak hiba esetén használhatók, és számláló rögzíti minden használatukat.', hl: ['pCommon:HB', 'pCommon:HK', 'pCommon:SK', 'pCommon:KO', 'pCommon:JM'] },
+    { do: `Vond vissza mindkettőt a célgombokkal: előbb ${pb('Vg.út visszav.')} + ${pb('V1')}, aztán ${pb('Vg.út visszav.')} + ${pb('F')}.`, why: 'Az F → I. vágány út célja a V1, a D → F úté az F.', keys: ['pCommon:VI', 'pSig:V1'], done: () => !activeFrom.F && !activeFrom.D },
+    { do: `Tárolás: állíts bejáratot ${pb('A')} + ${pb('V6')}, majd szemből ${pb('H')} + ${pb('K6')}.`, why: 'A második vágányút nem állhat be, mert a VI. vágányra szemből már vezet út. A berendezés eltárolja: a H és a K6 gomb villog. Ha az első vágányút feloldódik, a tárolt magától beáll.', keys: ['pSig:A', 'pSig:V6'], done: () => STORED.some(q => q.def.id === 'H-K6') || !!activeFrom.H },
+    { do: `Töröld a tárolást: ${pb('Tárolás törlés')} + ${pb('K6')}, aztán vond vissza az elsőt: ${pb('Vg.út visszav.')} + ${pb('V6')}.`, why: 'A tárolástörlés is a célgombbal kezelendő. Ha előbb az elsőt vonnád vissza, a tárolt vágányút azonnal beállna.', keys: ['pCommon:TT', 'pSig:K6'], done: () => !STORED.length && !activeFrom.A && !activeFrom.H },
+    { do: 'A rendkívüli gombok: Hívójelzés, Szigetelés kikapcsolása, Vonatvágányút kényszeroldás, Jelző Megállj!.', why: 'Ezek megkerülik a berendezés védelmét vagy forgalmi okból kellenek, ezért számláló rögzíti minden használatukat.', hl: ['pCommon:HJ', 'pCommon:SK', 'pCommon:KO', 'pCommon:JM'] },
   ] },
   { title: 'Vonat fogadása és indítása', sub: 'Gyakorlóvonat a tanpályán', steps: [
-    { do: `Vonat indult Pestszentlőrincről. Bejárat az I. vágányra: ${pb('M')} + ${pb('K1')}.`, why: 'A vonat a bejárati jelzőnél megáll, ha nincs vágányútja. Időben állíts neki utat, hogy ne kelljen fékeznie.', keys: ['pSig:M', 'pSig:K1'], enter: tutorTrain, done: () => !!activeFrom.M || !!(tT() && tT().arrAt != null) },
-    { do: `Jelzőt szabadra: ${pb('Jelzőáll.')} + ${pb('M')}.`, why: 'A sárga fény azt mondja a mozdonyvezetőnek: bejárhat, de a következő jelző (K1) Megállj!-t mutat.', keys: [K.JA, 'pSig:M'], done: () => ASP.M !== 'VOROS' || !activeFrom.M || !!activeFrom.M.train },
+    { do: `Vonat indult Pestszentlőrincről. Bejárat az I. vágányra: ${pb('M')} + ${pb('K1')}.`, why: 'A vonat a bejárati jelzőnél megáll, ha nincs vágányútja. Időben állíts neki utat. A jelző magától szabadra vált: a sárga fény azt mondja, bejárhat, de a K1 Megállj!-t mutat.', keys: ['pSig:M', 'pSig:K1'], enter: tutorTrain, done: () => !!activeFrom.M || !!(tT() && tT().arrAt != null) },
     { do: 'Figyeld a pultot: a piros csík maga a vonat. Megérkezik az I. vágányra, a peronhoz.', why: 'A vonat mögött a vágányút szakaszonként feloldódik. Semmit sem kell kezelned.', wait: true, rate: 4, done: () => !tT() || tT().arrAt != null },
-    { do: `Indítás Kőbánya-Teher felé: ${pb('K1')} + a bal oldali ${pb('zöld')} célgomb a Kőbánya-Teher bal vágánynál.`, why: 'Élesben előtte telefonon engedélyt kérsz a szomszéd állomástól. A tanpályán ezt most kihagyjuk.', keys: ['pSig:K1', 'pTarget:cKTb'], done: () => !!activeFrom.K1 },
-    { do: `Jelzőt szabadra: ${pb('Jelzőáll.')} + ${pb('K1')}.`, why: 'A tanpályán a menesztés automatikus. Szolgálatban az álló vonat adatlapjáról kérsz engedélyt és menesztesz.', keys: [K.JA, 'pSig:K1'], done: () => ASP.K1 !== 'VOROS' || !activeFrom.K1 || !!activeFrom.K1.train },
-    { do: 'A vonat elindul, és elhagyja az állomást.', why: 'Ennyi a szolgálat lényege: bejárat, jelző, kijárat, jelző. Élesben a Segítő mindig megmutatja a következő lépést.', wait: true, rate: 4, done: () => !tT() || tT().exiting || tT().state === 'done' },
+    { do: `Indítás Kőbánya-Teher felé: ${pb('K1')} + a bal oldali ${pb('zöld')} célgomb a Kőbánya-Teher bal vágánynál.`, why: 'Élesben előtte telefonon engedélyt kérsz a szomszéd állomástól. A tanpályán ezt most kihagyjuk, a menesztés is automatikus.', keys: ['pSig:K1', 'pTarget:cKTb'], done: () => !!activeFrom.K1 },
+    { do: 'A vonat elindul, és elhagyja az állomást.', why: 'Ennyi a szolgálat lényege: bejárat, kijárat, a jelzők maguktól szabadra váltanak. Élesben a Segítő mindig megmutatja a következő lépést.', wait: true, rate: 4, done: () => !tT() || tT().exiting || tT().state === 'done' },
   ] },
   { title: 'Telefon és menesztés', sub: 'Engedélyek, időközlés, menesztés', phone: true, steps: [
     { do: 'Csörög a telefon: Pestszentlőrinc vonatot ajánl fel. Nyisd meg a <b>Telefon</b>t, vedd fel, és add meg a fogadási engedélyt („…jöhet!”).', why: 'Vonat csak a te engedélyeddel indulhat feléd. Az engedély megadása után a vonal magától bont. A Vonatfogadás sor gombjával hívás nélkül is megadhatod.', enter: tutorOfferTrain, done: () => !tT() || tT().receiveAt != null },
     { do: 'A vonat elindult Pestszentlőrincről. A szomszéd közli az indulási időt, a játék ezt magától veszi és nyugtázza.', why: 'A bejárati vágányutat és jelzőt csak az indulási időközlés után állítod. A Segítő is csak ekkor javasolja.', enter: tutorDepartTrain, done: () => !tT() || phoneLines.PSb.sent.has(`receive-${tT().no}`) },
-    { do: `Bejárat az I. vágányra: ${pb('M')} + ${pb('K1')}.`, why: 'Most már tudod, hogy a vonat úton van, ideje utat állítani neki.', keys: ['pSig:M', 'pSig:K1'], done: () => !!activeFrom.M || !!(tT() && tT().arrAt != null) },
-    { do: `Jelzőt szabadra: ${pb('Jelzőáll.')} + ${pb('M')}.`, why: 'Amikor a vonat rálép a lezárt bejárati vágányútra, a pult mélyen, hosszan csörög.', keys: [K.JA, 'pSig:M'], done: () => ASP.M !== 'VOROS' || !activeFrom.M || !!activeFrom.M.train },
+    { do: `Bejárat az I. vágányra: ${pb('M')} + ${pb('K1')}.`, why: 'Most már tudod, hogy a vonat úton van, ideje utat állítani neki. Amikor a vonat rálép a lezárt bejárati vágányútra, a pult mélyen, hosszan csörög.', keys: ['pSig:M', 'pSig:K1'], done: () => !!activeFrom.M || !!(tT() && tT().arrAt != null) },
     { do: 'A vonat bejár az I. vágányra, és megáll a peronnál.', why: 'Utascsere közben már kérheted az indulási engedélyt.', wait: true, rate: 4, done: () => !tT() || tT().arrAt != null },
     { do: 'Kérj indulási engedélyt Kőbánya-Tehertől: kattints a vonatra a térképen (vagy a Menetrend sorára), és az adatlapon nyomd meg az <b>Engedélykérés telefonon</b> gombot.', why: 'Kétvágányú vonalon is engedélyt kérsz. Ha szabad az állomásköz, a szomszéd megadja, és a telefon magától bezárul.', done: () => !tT() || tT().departurePermission === true },
-    { do: `Kijárat Kőbánya-Teher felé: ${pb('K1')} + a bal oldali ${pb('zöld')} célgomb a Kőbánya-Teher bal vágánynál.`, why: 'A kijárati vágányút a kijárati jelzőtől az állomás határáig világít. A nyílt vonalat csak a menetirány nyila jelzi.', keys: ['pSig:K1', 'pTarget:cKTb'], done: () => !!activeFrom.K1 },
-    { do: `Jelzőt szabadra: ${pb('Jelzőáll.')} + ${pb('K1')}.`, why: 'Engedély és szabad kijárati jelző kell a menesztéshez.', keys: [K.JA, 'pSig:K1'], done: () => ASP.K1 !== 'VOROS' || !activeFrom.K1 || !!activeFrom.K1.train },
+    { do: `Kijárat Kőbánya-Teher felé: ${pb('K1')} + a bal oldali ${pb('zöld')} célgomb a Kőbánya-Teher bal vágánynál.`, why: 'A kijárati vágányút a kijárati jelzőtől az állomás határáig világít. A nyílt vonalat csak a menetirány nyila jelzi. Engedély és szabad kijárati jelző kell a menesztéshez.', keys: ['pSig:K1', 'pTarget:cKTb'], done: () => !!activeFrom.K1 },
     { do: 'Meneszd a vonatot: a vonat adatlapján nyomd meg a <b>Menesztés</b> gombot, majd a megjelenő <b>Menesztés</b>t.', why: 'A Menesztés gomb az utascsere végén jelenik meg. Menesztéskor megszólal a síp, és a vonat elindul.', rate: 3, done: () => !tT() || tT().dispatchAt != null },
     { do: 'A vonat elhagyja az állomást. Kihaladás után az indulási időközlést a játék automatikusan leadja Kőbánya-Tehernek.', why: 'Nem kell külön telefonálnod. A beszélgetés a telefon naplójában a Kőbánya-Teher fülön visszanézhető.', wait: true, rate: 4, done: () => !tT() || phoneLines.KTb.sent.has(`report-${tT().no}`) },
   ] },
@@ -5876,7 +5980,7 @@ function tutorSim(real) {
     for (const id in SW) { const w = SW[id]; if (w.moving && now >= w.until) { w.pos = w.target; w.moving = false; } }
     computeOcc(); updateSR(); computeAspects();
     for (const tr of trains) if (tr.state === 'run') moveTrain(tr, dt);
-    computeOcc(); releaseRoutes();
+    computeOcc(); releaseRoutes(); serveStored();
     releaseLineDirections();
     updateSR(); computeAspects(); updateCars(dt);
   }
@@ -5991,7 +6095,7 @@ function guideHighlight() {
     else hl.pult.add(pStart === def.start ? pTarget : 'pSig:' + def.start);
     if (selStart === def.start) hl.sec.add(def.dest[0]); else hl.map.add(def.start);
   } else if (guidePlan.kind === 'signal') {
-    hl.pult.add(armed === 'JA' ? 'pSig:' + guidePlan.id : 'pCommon:JA');
+    hl.pult.add(armed === 'VI' ? hitKey(guidePlan.target) : 'pCommon:VI');
     hl.map.add(guidePlan.id);
   }
   return hl;
@@ -6006,15 +6110,14 @@ function drawGuideRing(c, x, y, r) {
   c.restore();
 }
 const COMMON_HELP = {
-  HB: 'Bejárati hívójelzés. + bejárati vagy közbenső jelző (A, B, C, D, E, F, H, L, M) gombja: a jelzőn villogó fehér fény jelenik meg, a vonat 15 km/h-val, a berendezés ellenőrzése nélkül jöhet be. Csak végszükség esetén!',
-  HK: 'Kijárati hívójelzés. + kijárati jelző gombja: mint a bejárati, de kijáratra. A berendezés semmit sem ellenőriz.',
-  SK: 'Szigetelés kikapcsolása. + váltógomb: foglaltnak mutatott (pl. hibás szigetelésű) váltó állítása saját felelősségre. A számláló minden használatot rögzít.',
-  KO: 'Kényszeroldás + kezdőjelző gombja: vágányút-visszavonás a jelző szabadra állítása után, vagy kényszeroldás, ha a vonat után a vágányút nem oldódott fel. A jelző Megállj!-ra vált. Ha vonat közeledik a jelzőhöz, az oldás 3 perc múlva történik (KO lámpa), egyébként azonnal. A számláló rögzíti.',
-  JM: 'Jelző Megállj!. + jelző gombja: a szabad jelzőt Megállj!-ra állítja, a vágányút lezárva marad (kényszeroldással oldható). Élő hívójelzést is megszüntet.',
-  KA: 'Közös állítás. + váltó gombja: egyedi váltóállítás. A kulcsos váltókat (A/3, A/5, A/7, 2, 38/1) a terepasztalon, kulccsal kell kezelni.',
-  TO: 'Törlés. + kezdőgomb: a lezárt vágányút törlése, de csak jelzőállítás előtt (első lezárás). Jelzőállítás után csak kényszeroldással törölhető.',
-  JA: 'Jelzőállítás (második lezárás). A lezárt vágányút jelzőjének gombja, majd a Jelzőáll. gomb (vagy fordított sorrendben): a jelző szabadra vált.',
-  VV: 'Váltó visszajelentés: a váltók állását mutató szárcsíkok be- és kikapcsolása. Sárga = szabad váltó, vörös = jármű van rajta, villog = állítás alatt.',
+  HJ: 'Hívójelzés + a jelző kezdőgombja: a jelzőn a vörös mellett villogó fehér fény jelenik meg, a vonat legfeljebb 15 km/h-val, a berendezés ellenőrzése nélkül haladhat. Számlált kezelés. A vonat a jelző utáni szakaszra lépve maga kapcsolja le, előtte a Jelző Megállj! gombbal szüntethető meg.',
+  SK: 'Szigetelés kikapcsolása + váltógomb: foglaltnak mutatott (pl. hibás szigetelésű) váltó állítása saját felelősségre. Számlált kezelés.',
+  KO: 'Vonatvágányút kényszeroldás + a vágányút célgombja (bejáratnál a túloldali jelző gombja, kijáratnál a zöld vágányúti célgomb): a jelző Megállj!-ra vált, a vágányút 3 perc múlva oldódik. Akkor kell, ha a vonat már behaladt a vágányútba, vagy a vágányút a vonat után lezárva maradt. Számlált kezelés.',
+  JM: 'Jelző Megállj! + a jelző kezdőgombja: a szabad jelzőt Megállj!-ra kapcsolja, a vágányút lezárva marad. A jelző újra csak a vágányút feloldása után állhat szabadra. A hívójelzést is ezzel kell megszüntetni. Számlált kezelés.',
+  VI: 'Vonatvágányút visszavonás + a vágányút célgombja: amíg a vonat nem lépett be a vágányútba. A jelző Megállj!-ra vált (a Jelző M! számláló lép egyet). Ha a vonat még nincs a közelítési szakaszban, a vágányút azonnal oldódik, különben 3 perc múlva. Tárolt vágányutat is töröl.',
+  KA: 'Közös vezérlés + váltó gombja: egyedi váltóállítás. A váltó azonnal elindul, ismételt kezelés megfordítja. Lezárt, foglalt vagy felvágott váltó nem állítható.',
+  TT: 'Tárolástörlés + a tárolt vágányút célgombja: amíg a vágányút gombjai villognak (tárolt vágányút), a tárolás megszakad.',
+  VV: 'Váltó visszajelentés: a váltók állását mutató szárcsíkok be- és kikapcsolása. Fehér = szabad váltó, vörös = jármű van rajta, villog = állítás alatt.',
 };
 function pultTipHtml(el) {
   if (el.type === 'pCommon') return `<b>${COMMON[el.id].label.join(' ').replace('- ', '')}</b><br>${COMMON_HELP[el.id]}`;
@@ -6023,7 +6126,7 @@ function pultTipHtml(el) {
     const role = s.inter ? `Közbenső jelző: célgomb a(z) ${s.line === 'KTb' ? 'D' : 'C'} jelzőről, és kezdőgomb a vágányra (utána a célvágány túlsó végén lévő ${s.dir > 0 ? 'V' : 'K'} gomb).`
       : s.kind === 'entry' ? `Kezdőgomb a bejárathoz (${LINES[s.line].name} felől). ${LINES[s.line].inter ? `Előbb a(z) ${LINES[s.line].inter} közbenső jelzőig, onnan tovább a vágányra.` : `Utána a célvágány túlsó végén lévő ${s.dir > 0 ? 'V' : 'K'} gomb.`}`
       : `Célgomb a bejárathoz, és kezdőgomb a kijárathoz ${s.dir > 0 ? 'kelet (Pestszentlőrinc, Kispest)' : 'nyugat (Kőbánya-Teher, Ferencváros)'} felé (utána a zöld célgomb).`;
-    return `<b>${s.label} jelző gombja</b><br>${ASP_NAME[ASP[el.id]]}<br>${role}` + (r ? `<br>Lezárva: ${r.def.name}${r.sigReq || r.train ? '' : ' – jelzőállítás kell'}` : '');
+    return `<b>${s.label} jelző gombja</b><br>${ASP_NAME[ASP[el.id]]}<br>${role}` + (r ? `<br>Lezárva: ${r.def.name}${r.sigReq || r.train ? '' : ' – Jelző Megállj!-ra kapcsolva'}` : '');
   }
   if (el.type === 'pTarget') { const L = LINES[el.id.slice(1)]; return `<b>Vágányúti célgomb – ${lineLabel(L.id)} felé</b><br>Kijárathoz: előbb a kijárati jelző (${L.side === 'E' ? 'V' : 'K'}) gombja, aztán ez.`; }
   if (el.type === 'pEnd') {
@@ -7299,14 +7402,11 @@ const BZ_STATION = {
     const opp = () => H.spawn('b', H.pick(t => t.from === 'KP' && t.terminus), { track: '9', options: ['9'] });
     return [
       { title: 'A berendezés felépítése', sub: 'Pult, vágányok, jelzőgombok, közös gombok', steps: LESSONS[0].steps },
-      { title: 'Váltóállítás', sub: 'Közös áll. + váltógomb', steps: LESSONS[1].steps },
+      { title: 'Váltóállítás', sub: 'Közös vez. + váltógomb', steps: LESSONS[1].steps },
       { title: 'Bejárati vágányút és jelző', sub: 'Próbavonat Pestszentlőrinc felől az I. vágányra', steps: [
         H.route('M-K1', `Próbavonat indult Pestszentlőrincről. Állítsd be a bejárati vágányutat az I. vágányra: ${pb('M')} + ${pb('K1')}.`,
-          'A kezdőgomb (M) és a célgomb (K1) kijelöli az utat. A berendezés maga állítja és lezárja a váltókat, a fehér csík mutatja a lezárt vágányutat. Ez az első lezárás.',
+          'A kezdőgomb (M) és a célgomb (K1) kijelöli az utat. A berendezés maga állítja és lezárja a váltókat, a fehér csík mutatja a lezárt vágányutat. Ha minden feltétel teljesül, a jelző magától szabadra vált.',
           { enter: tutorTrain, past: () => !!(a() && a().arrAt != null) }),
-        H.signal('M-K1', `Állítsd szabadra a bejárati jelzőt: ${pb('Jelzőáll.')} + ${pb('M')}.`,
-          'A jelző csak külön parancsra vált szabadra (második lezárás). Sárgát mutat: bejárhatsz, de a következő jelző (K1) Megállj!-t mutat.',
-          { past: () => !!(a() && a().arrAt != null) }),
         H.wait('Figyeld a pultot: a piros csík maga a próbavonat. Bejár az I. vágányra, és megáll a peronnál.',
           'A jelző a vonat mögött magától Megállj!-ra esik, a vágányút szakaszonként feloldódik.', arrived(a)),
       ] },
@@ -7314,24 +7414,19 @@ const BZ_STATION = {
         H.route('K1-KTb', `A próbavonat az I. vágányon áll. Kijárati vágányút Kőbánya-Teher felé: ${pb('K1')} + a bal oldali ${pb('zöld')} célgomb a Kőbánya-Teher bal vágánynál.`,
           'Kijáratnál a cél a nyílt vonal. A menetirány nyila nyugat felé fordul: amíg így áll, szemből nem indulhat vonat ezen a vágányon.',
           { enter: () => { if (!a() || a().arrAt == null || a().state !== 'run') H.autoplay(2); }, past: () => !!(a() && a().depAt != null) }),
-        H.signal('K1-KTb', `Állítsd szabadra a kijárati jelzőt: ${pb('Jelzőáll.')} + ${pb('K1')}.`,
-          'A zöld fény azt jelenti, hogy a térköz szabad. A tanpályán a menesztés magától történik.', { past: () => !!(a() && a().depAt != null) }),
-        H.wait('A próbavonat elindul, és elhagyja az állomást.', 'A vonat mögött a vágányút magától feloldódik. Ennyi a lényeg: bejárat, jelző, kijárat, jelző.', gone(a)),
+        H.wait('A próbavonat elindul, és elhagyja az állomást.', 'A vonat mögött a vágányút magától feloldódik. Ennyi a lényeg: bejárat, kijárat, a jelzők maguktól szabadra váltanak.', gone(a)),
       ] },
       { title: 'Kereszt lebonyolítása', sub: 'Két vonat találkozik a kispesti egyvágányú vonalon', bonus: true, steps: [
         H.info('Kereszt: két szembe haladó vonat az állomáson találkozik. A Kispest felé vezető vonal egyvágányú: egyszerre csak egy vonat lehet rajta, ezért az egyik bevárja a másikat.',
           'Ferencváros felől érkezik az „a” motorvonat, amely Kispestre megy tovább. Kispestről hamarosan elindul a „b” vonat, amely itt végállomásra ér.', { enter: fwd }),
         H.route('A-V6', `Bejárati vágányút az „a” vonatnak a VI. vágányra: ${pb('A')} + ${pb('V6')}.`, 'A VI. vágányról közvetlenül el lehet indulni a kispesti vonalra.', { past: () => !!(a() && a().arrAt != null) }),
-        H.signal('A-V6', `Jelzőt szabadra: ${pb('Jelzőáll.')} + ${pb('A')}.`, 'Az „a” vonat bejár, és megáll a peronnál.', { past: () => !!(a() && a().arrAt != null) }),
         H.wait('Az „a” vonat bejár a VI. vágányra, és megáll.', 'Most már csak a kispesti vonal szabadságán múlik, mikor indulhat tovább.', arrived(a)),
         H.info(`Kispestről elindult a szembejövő „b” vonat. Próbáld meg most kijáratot állítani az „a” vonatnak: ${pb('V6')} + a jobb oldali ${pb('zöld')} célgomb a Kispest vágánynál.`,
-          'A berendezés nem engedi: a kispesti vonalon szembe jön a „b” vonat, a menetirány a te állomásod felé áll. Ezért kell az „a” vonatnak bevárnia. Ez a kereszt lényege.',
+          'A berendezés nem állítja be: a kispesti vonalon szembe jön a „b” vonat, a menetirány a te állomásod felé áll. A vágányutat eltárolja (a gombok villognak), és magától beállítja, amint a vonal felszabadul. Ezért kell az „a” vonatnak bevárnia. Ez a kereszt lényege.',
           { enter: opp, hl: ['pSig:V6', 'pTarget:cKP'] }),
         H.route('H-K9', `Bejárati vágányút a „b” vonatnak a IX. vágányra: ${pb('H')} + ${pb('K9')}.`, 'A IX. vágány csonka vágány, a kispesti vonatok itt fordulnak.', { past: () => !!(b() && (b().arrAt != null || b().parked)) }),
-        H.signal('H-K9', `Jelzőt szabadra: ${pb('Jelzőáll.')} + ${pb('H')}.`, 'Amíg a „b” vonat be nem ér, az „a” vonat áll a VI. vágányon.', { past: () => !!(b() && (b().arrAt != null || b().parked)) }),
         H.wait('A „b” vonat bejár a IX. vágányra, és megáll. A kereszt létrejött.', 'Amint a „b” vonat teljes hosszában bent van, a kispesti vonal felszabadul, a menetirány visszaállhat.', arrived(b)),
         H.route('V6-KP', `Most már indulhat az „a” vonat Kispest felé: ${pb('V6')} + a jobb oldali ${pb('zöld')} célgomb a Kispest vágánynál.`, 'A menetirány nyila most Kispest felé fordul.', { past: () => !!(a() && a().depAt != null) }),
-        H.signal('V6-KP', `Jelzőt szabadra: ${pb('Jelzőáll.')} + ${pb('V6')}.`, 'Az „a” vonat elindul Kispestre.', { past: () => !!(a() && a().depAt != null) }),
         H.wait('Az „a” vonat elhagyja az állomást.', 'Élesben a keresztet a menetrend írja elő, és a Segítő is jelzi, melyik vonat vár melyikre.', gone(a)),
       ] },
     ];
